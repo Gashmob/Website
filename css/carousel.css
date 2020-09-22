@@ -1,0 +1,82 @@
+.carousel {
+    padding: 0.4em 10%;
+}
+
+.carousel .head {
+    display: flex;
+    justify-content: right;
+    width: 100%;
+    background-color: whitesmoke;
+}
+
+/* _.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-. */
+/* CONTENT */
+
+.carousel .content {
+    width: 100%;
+    display: flex;
+}
+
+.carousel .content > div {
+    width: 100%;
+    display: flex;
+    margin: auto;
+    justify-content: left;
+}
+
+.carousel .content > div > img {
+    width: 40%;
+    margin: 1em;
+}
+
+.carousel .content-text {
+    text-align: justify;
+    margin: 2em;
+    font-size: 1.2em;
+}
+
+.carousel .content-text p {
+    margin-bottom: 0.3em;
+}
+
+.carousel .content-text ul {
+    margin-left: 1em;
+}
+
+.carousel .content-text li {
+    margin-bottom: 0.2em;
+}
+
+
+/* _.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-. */
+/* ARROW */
+
+.carousel .side-buttons {
+    width: 20%;
+    font-size: 2em;
+    padding: 4em 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.carousel .side-buttons > *:hover {
+    cursor: pointer;
+}
+
+
+/* _.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-. */
+/* BOTTOM-BUTTONS */
+
+.carousel .bottom-buttons {
+    margin-top: 0.4em;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel .bottom-buttons > * {
+    margin: 0 1em;
+}
+
+.carousel .bottom-buttons > *:hover {
+    cursor: pointer;
+}

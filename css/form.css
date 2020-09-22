@@ -1,0 +1,52 @@
+.form {
+    margin: 2em 35%;
+    width: 30%;
+}
+
+.form .input-group {
+    display: flex;
+    width: 100%;
+    margin-top: 1em;
+}
+
+.form .input-group-text {
+    background-color: whitesmoke;
+    padding: 0.3em;
+    white-space: nowrap;
+
+    border-radius: 0.3em 0 0 0.3em;
+    border: 1px solid dimgray;
+}
+
+.form .input {
+    width: 100%;
+    padding: 0.3em;
+    border-radius: 0 0.3em 0.3em 0;
+    border: 1px solid dimgray;
+    border-left: 0;
+    font-size: 1em;
+    font-family: Roboto, sans-serif;
+
+    transition: all 100ms ease;
+}
+
+.form input:focus, textarea:focus {
+    border: 2px solid dodgerblue;
+}
+
+.form .button {
+    margin: 1em;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    border: 2px solid cornflowerblue;
+    background-color: dodgerblue;
+    color: white;
+    font-weight: bold;
+
+    transition: background-color 500ms ease;
+}
+
+.form .button:hover {
+    background-color: royalblue;
+    cursor: pointer;
+}

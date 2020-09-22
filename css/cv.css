@@ -1,0 +1,130 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300itaâ€Œâ€‹lic,400italic,500,500italic,700,700italic,900italic,900);
+
+/* _.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-. */
+/* GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: Roboto, sans-serif;
+}
+
+body {
+    margin: 0 20%;
+    box-shadow: -5px 0 5px gray, 5px 0 5px gray;
+}
+
+a {
+    text-decoration: none;
+    color: darkcyan;
+}
+
+a:hover {
+    border-bottom: 1px solid darkcyan;
+}
+
+/* _.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-. */
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: left;
+
+    margin-top: 2em;
+    padding: 2em;
+
+    background-color: darkcyan;
+}
+
+header img {
+    margin: 0 2em;
+}
+
+header span {
+    margin: auto 0;
+    font-size: 4em;
+}
+
+/* _.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-. */
+/* MAIN */
+
+main {
+    display: flex;
+    justify-content: left;
+    padding: 2em 0;
+}
+
+/* _.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-. */
+/* COORDONNEE */
+
+.coordonnee {
+    width: 25%;
+    padding: 0 1em;
+    border-right: 4px solid darkcyan;
+}
+
+.coordonnee h2 {
+    text-transform: uppercase;
+    font-size: 1.5em;
+}
+
+.coordonnee ul {
+    margin-left: 1em;
+    margin-top: 1em;
+}
+
+.coordonnee li {
+    margin: 1em 0;
+}
+
+/* _.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-. */
+/* CONTENT */
+
+.content {
+    width: 60%;
+    padding: 0 2em;
+}
+
+.content h2 {
+    width: 100%;
+    border-bottom: 2px solid darkcyan;
+    text-transform: uppercase;
+}
+
+/* _.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-. */
+/* SECTION */
+
+section {
+    margin-bottom: 2em;
+}
+
+section h2 {
+    margin-bottom: 0.4em;
+}
+
+section ul {
+    margin-left: 1em;
+}
+
+section li {
+    list-style: none;
+    margin-bottom: 1em;
+}
+
+section li .titre {
+    font-weight: bold;
+}
+
+section li .date {
+    font-style: italic;
+}
+
+/* _.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-. */
+/* FOOTER */
+
+footer {
+    padding: 1em 0;
+    margin-bottom: 2em;
+    text-align: center;
+}

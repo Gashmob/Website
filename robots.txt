@@ -1,3 +1,0 @@
-User-agent: *
-Disallow: /Hediata/
-Sitemap: http://ktraini.com/sitemap.xml

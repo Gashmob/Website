@@ -2,10 +2,57 @@
 
 {% block title %}Kevin Traini{% endblock %}
 
+{% block stylesheet %}
+    <link rel="stylesheet" href="resources/css/article_list.css">
+    <link rel="stylesheet" href="resources/css/project_list.css">{% endblock %}
+
 {% block bodytitle %}Kevin Traini{% endblock %}
 
 {% block bodysubtitle %}Projets, articles, CV ...{% endblock %}
 
 {% block body %}
-    <p></p>
+    <article>
+        <p>Étudiant en licence informatique, je partage mon temps libre entre famille, lecture et programmation. Je
+            réalise divers projet autant en web (sites, framework) qu'en logiciel (simulation, mobile). Enfin je rédige
+            quelques articles sur ce site quand j'ai quelques connaissances à partager.</p>
+    </article>
+    <hr/>
+    <article>
+        <h2>Mes derniers articles :</h2>
+        {% if articles %}
+            <div class="article-list">
+                {% for article in articles %}
+                    <a href="#" class="article-list-item">
+                        <div>
+                            <h3>{{ article.title }}</h3>
+                            <span>{{ article.updatedAt|date("j M Y") }}</span>
+                            <p>{{ article.subtitle }}</p>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>Aucun article</p>
+        {% endif %}
+    </article>
+    <hr/>
+    <article>
+        <h2>Mes derniers projets :</h2>
+        {% if projects %}
+            <div class="project-list">
+                {% for project in projects %}
+                    <a href="#" class="project-list-item">
+                        <div>
+                            <h3>{{ project.name }}</h3>
+                            <span>{{ project.updatedAt|date("M Y") }}</span>
+                            <p>{{ project.description }}</p>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>Aucun projet</p>
+        {% endif %}
+    </article>
+
 {% endblock %}

@@ -42,12 +42,6 @@
     list-style: none;
 }
 
-.pure-menu-link {
-    width: 100%;
-    color: white;
-    text-decoration: none;
-}
-
 .pure-menu-item {
     padding: 0.3em 0 0.3em 0.6em;
 }
@@ -56,10 +50,17 @@
     background-color: slategray;
 }
 
+.pure-menu-link {
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
 .pure-menu-link:hover {
     color: white;
-    text-decoration: underline;
+    text-decoration: none;
     cursor: pointer;
+    border-bottom-color: white;
 }
 
 .pure-menu-info {
@@ -91,7 +92,12 @@
 }
 
 .content {
-    padding: 1em 0;
+    padding: 2em 0;
     margin: auto;
     max-width: 50%;
+}
+
+article {
+    font-size: 1.5em;
+    text-align: justify;
 }

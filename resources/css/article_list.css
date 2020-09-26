@@ -1,0 +1,25 @@
+.article-list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.article-list-item {
+    margin: 0.5em 0;
+    padding: 0.3em;
+    background-color: whitesmoke;
+    color: black;
+}
+
+.article-list-item:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.article-list-item:hover h3 {
+    text-decoration: underline;
+}
+
+.article-list-item span {
+    font-size: 0.7em;
+}

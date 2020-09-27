@@ -1,103 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Quicksand", sans-serif;
 }
 
 .menu {
-    margin-left: -150px;
-    width: 150px;
-    position: fixed;
-    top: 0;
-    left: 150px;
-    bottom: 0;
-    z-index: 1000;
-    background-color: lightslategray;
-    overflow-y: auto;
-    font-size: 1.2em;
+  background-color: #008B8B;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  font-size: 1.3em;
+}
+.menu__main {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.menu__icons {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.menu__texts {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.menu__texts--hidden {
+  width: 0;
+  display: none;
+}
+.menu__icon {
+  width: 100%;
+  padding: 0.5em;
+}
+.menu__icon:hover {
+  background-color: #005858;
+}
+.menu__text {
+  padding: 0.5em 0.5em 0.5em 0.3em;
+}
+.menu__text:hover {
+  background-color: #005858;
+}
+.menu a {
+  color: white;
+}
+.menu a:hover {
+  color: white;
+  text-decoration: none;
+}
+.menu hr {
+  border-color: #005858;
 }
 
-.pure-menu {
-    border: none;
-    background: transparent;
-}
-
-.menu ul {
-    border-top: 1px solid dimgray;
-
-}
-
-.pure-menu-heading {
-    color: white;
-    font-weight: bold;
-    font-size: 1.1em;
-    text-align: center;
-    width: 100%;
-    padding: 0.5em 0;
-}
-
-.pure-menu-list {
-    list-style: none;
-}
-
-.pure-menu-item {
-    padding: 0.3em 0 0.3em 0.6em;
-}
-
-.pure-menu-item:hover {
-    background-color: slategray;
-}
-
-.pure-menu-link {
-    color: white;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-}
-
-.pure-menu-link:hover {
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-    border-bottom-color: white;
-}
-
-.pure-menu-info {
-    font-size: 0.7em;
-    color: white;
-    padding-left: 0.3em;
-}
-
-
-.header, .content {
-    padding: 0 2em;
-}
-
-.header {
-    text-align: center;
-    padding: 2.5em 2em 0;
-    border-bottom: 1px solid gainsboro;
-}
-
-.header h1 {
-    font-size: 3em;
-    font-weight: 300;
-}
-
-.header h2 {
-    font-weight: 300;
-    color: silver;
-    padding-bottom: 0.5em;
-}
-
-.content {
-    padding: 2em 0;
-    margin: auto;
-    max-width: 50%;
-}
-
-article {
-    font-size: 1.5em;
-    text-align: justify;
-}
+/*# sourceMappingURL=main.css.map */

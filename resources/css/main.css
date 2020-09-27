@@ -56,4 +56,17 @@
   border-color: #005858;
 }
 
+.header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 1em 0;
+  margin-bottom: 1em;
+}
+.header h1 {
+  font-size: 4em;
+}
+.header h2 {
+  color: #00bebe;
+}
+
 /*# sourceMappingURL=main.css.map */

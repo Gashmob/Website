@@ -69,4 +69,10 @@
   color: #00bebe;
 }
 
+.content {
+  width: 50%;
+  margin: auto;
+  text-align: justify;
+}
+
 /*# sourceMappingURL=main.css.map */

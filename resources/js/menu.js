@@ -1,11 +1,11 @@
-let isExpand = false;
+let isExpand = true;
 
 $('#menu_expand').on('click', function () {
     if (isExpand) {
         isExpand = false;
-        $('.menu__texts').addClass('menu__texts--hidden');
+        $('.menu__texts').animate({'width':'0'}, 'slow');
     } else {
         isExpand = true;
-        $('.menu__texts').removeClass('menu__texts--hidden');
+        $('.menu__texts').animate({'width':'100%'}, 'slow');
     }
 })

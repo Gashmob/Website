@@ -17,6 +17,10 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+
+    #menu_expand:hover {
+      cursor: pointer;
+    }
   }
 
   &__texts {

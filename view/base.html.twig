@@ -10,32 +10,32 @@
           integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 
-    <link rel="stylesheet" href="resources/css/main.css">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 
-    <link rel="shortcut icon" href="resources/img/profil.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('img/profil.png') }}" type="image/x-icon">
 </head>
 
 <body>
 <div class="menu">
     <div class="menu__main">
         <div class="menu__icons">
-            <a href="#" class="menu__icon" id="menu_expand"><i class="fas fa-bars"></i></a>
+            <a class="menu__icon" id="menu_expand"><i class="fas fa-bars"></i></a>
         </div>
         <div class="menu__texts menu__texts--hidden">
-            <a href="./" class="menu__text" id="menu_expand">Kevin Traini</a>
+            <a href="{{ route('home') }}" class="menu__text" id="menu_expand">Kevin Traini</a>
         </div>
     </div>
     <hr/>
     <div class="menu__main">
         <div class="menu__icons">
-            <a href="./" class="menu__icon"><i class="fas fa-home"></i></a>
+            <a href="{{ route('home') }}" class="menu__icon"><i class="fas fa-home"></i></a>
             <a href="#" class="menu__icon"><i class="fas fa-list-ul"></i></a>
             <a href="#" class="menu__icon"><i class="fas fa-archive"></i></a>
             <a href="#" class="menu__icon"><i class="fas fa-user"></i></a>
             <a href="#" class="menu__icon"><i class="fas fa-phone-alt"></i></a>
         </div>
         <div class="menu__texts menu__texts--hidden">
-            <a href="./" class="menu__text">Accueil</a>
+            <a href="{{ route('home') }}" class="menu__text">Accueil</a>
             <a href="#" class="menu__text">Articles</a>
             <a href="#" class="menu__text">Projets</a>
             <a href="#" class="menu__text">Mon CV</a>
@@ -66,7 +66,7 @@
 </div>
 </body>
 
-<script src="resources/js/menu.js"></script>
+<script src="{{ asset('js/menu.js') }}"></script>
 {% block javascript %}{% endblock %}
 
 </html>

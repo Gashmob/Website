@@ -18,12 +18,12 @@
         {% if articles %}
             <div class="article-list">
                 {% for article in articles %}
-                    <a href="#" class="article-list-item">
+                    <a href="#" class="article-list__item">
                         <div>
                             <h3>{{ article.title }}</h3>
-                            <span>{{ article.updatedAt|date("j M Y") }}</span>
-                            <p>{{ article.subtitle }}</p>
+                            <span>{{ article.updatedAt|date("M Y") }}</span>
                         </div>
+                        <p>{{ article.subtitle }}</p>
                     </a>
                 {% endfor %}
             </div>
@@ -37,12 +37,10 @@
         {% if projects %}
             <div class="project-list">
                 {% for project in projects %}
-                    <a href="#" class="project-list-item">
-                        <div>
-                            <h3>{{ project.name }}</h3>
-                            <span>{{ project.updatedAt|date("M Y") }}</span>
-                            <p>{{ project.description }}</p>
-                        </div>
+                    <a href="#" class="project-list__item">
+                        <img src="{{ asset('img/header.jpg') }}" alt=""/>
+                        <h3>{{ project.name }}</h3>
+                        <p>{{ project.description }}</p>
                     </a>
                 {% endfor %}
             </div>

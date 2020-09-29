@@ -24,6 +24,9 @@
   flex-direction: column;
   justify-content: flex-start;
 }
+.menu__icons #menu_expand:hover {
+  cursor: pointer;
+}
 .menu__texts {
   width: 100%;
   display: flex;
@@ -72,7 +75,76 @@
 .content {
   width: 50%;
   margin: auto;
+  padding-bottom: 3em;
   text-align: justify;
+}
+.content article {
+  font-size: 1.2em;
+  padding: 0.5em 0;
+}
+.content p {
+  text-indent: 1.5em;
+}
+
+.article-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.article-list__item {
+  color: black;
+  padding: 0.3em;
+  margin: 0.5em;
+  transition: background-color 200ms ease;
+}
+.article-list__item div {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.article-list__item h3 {
+  padding: 0.3em;
+}
+.article-list__item p {
+  padding-left: 1.5em;
+  text-align: justify;
+}
+.article-list__item:hover {
+  color: black;
+  background-color: gainsboro;
+  text-decoration: none;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: stretch;
+}
+.project-list__item {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5em;
+  color: black;
+}
+.project-list__item img {
+  width: 100%;
+}
+.project-list__item h3 {
+  padding: 1em;
+  background-color: orange;
+  font-weight: 900;
+  text-shadow: 3px 3px 0 #cc8400;
+}
+.project-list__item p {
+  padding: 1em;
+}
+.project-list__item:hover {
+  color: black;
+  text-decoration: none;
+  background-color: gainsboro;
 }
 
 /*# sourceMappingURL=main.css.map */

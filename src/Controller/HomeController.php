@@ -31,4 +31,12 @@ class HomeController extends AbstractController
             'projects' => $projets
         ]);
     }
+
+    /**
+     * @Route(route="/cv", name="cv")
+     */
+    public function cv()
+    {
+        return $this->render('cv/cv.html.twig');
+    }
 }

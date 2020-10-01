@@ -147,4 +147,71 @@
   background-color: gainsboro;
 }
 
+.cv__header {
+  display: flex;
+  justify-content: left;
+  background-color: orange;
+  padding: 2em;
+  margin-bottom: 2em;
+}
+.cv__header span {
+  font-size: 3em;
+  margin: auto;
+  font-weight: bolder;
+}
+.cv__body {
+  display: flex;
+  justify-content: space-between;
+}
+.cv__body__details {
+  width: 30%;
+  border-right: 4px solid orange;
+  padding: 1em;
+}
+.cv__body__details h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.cv__body__details ul {
+  list-style: none;
+}
+.cv__body__content {
+  padding: 1em;
+  width: 65%;
+}
+.cv__body__content h2 {
+  width: 100%;
+  text-transform: uppercase;
+  border-bottom: 2px solid orange;
+  font-weight: bold;
+}
+.cv__body__content ul {
+  list-style: none;
+}
+.cv__body__content li {
+  margin-bottom: 1em;
+}
+.cv__body__content li h3 {
+  font-weight: bold;
+  font-size: 1.3em;
+}
+.cv__body__content li p {
+  margin: 0;
+}
+.cv__body__content li .date {
+  font-style: italic;
+}
+
+a {
+  color: #008B8B;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+a:hover {
+  color: #008B8B;
+  text-decoration: none;
+  border-bottom-color: #008B8B;
+}
+
 /*# sourceMappingURL=main.css.map */

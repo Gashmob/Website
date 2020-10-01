@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CV{% endblock %}
+
+{% block bodytitle %}CV{% endblock %}
+
+{% block bodysubtitle %}Curriculum vitae{% endblock %}
+
+{% block body %}
+    <article>
+        <div class="cv__header">
+            <img src="{{ asset('img/profil.png') }}" alt="">
+            <span>Kevin Traini</span>
+        </div>
+        <div class="cv__body">
+            <div class="cv__body__details">
+                <h2>Coordonnées</h2>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> France, Aix-les-Bains</li>
+                    <li><i class="fas fa-at"></i> <a href="mailto:kevin@ktraini.com">kevin@ktraini.com</a></li>
+                    <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/kevin-traini-1253661b0/"
+                                                           target="_blank">Kevin Traini</a></li>
+                    <li><i class="fas fa-globe"></i> <a href="https://ktraini.com" target="_blank">ktraini.com</a></li>
+                </ul>
+            </div>
+
+            <div class="cv__body__content">
+                <section>
+                    <h2>Formation</h2>
+                    <ul>
+                        <li>
+                            <h3 class="titre">Bac scientifique option ISN (Informatique et Science du Numérique)</h3>
+                            <p class="date">2017 - 2018</p>
+                            <p class="lieu">Lycée Polivalent Marlioz</p>
+                            <p class="info">Obtenu mention assez bien</p>
+                        </li>
+                        <li>
+                            <h3 class="titre">Licence informatique</h3>
+                            <p class="date">2018 - 2021 (en cours)</p>
+                            <p class="lieu">Université Savoie Mont Blanc</p>
+                            <p class="info">Licence 2 obtenue mention bien</p>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Compétences</h2>
+                    <ul>
+                        <li>
+                            <h3 class="titre">Informatique</h3>
+                            <p class="info">Bureautique, Web, Logiciel</p>
+                        </li>
+                        <li>
+                            <h3 class="titre">Sens de l'organisation</h3>
+                        </li>
+                        <li>
+                            <h3 class="titre">Ponctuel</h3>
+                        </li>
+                        <li>
+                            <h3 class="titre">PSC1</h3>
+                            <p class="date">2012</p>
+                            <p class="info">Certificat de prévention et secours civiques de niveau 1</p>
+                        </li>
+                        <li>
+                            <h3 class="titre">Permis B</h3>
+                            <p class="date">2019</p>
+                            <p class="info">Obtenu suite à la conduite accompagnée</p>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Parcours professionnel</h2>
+                    <ul>
+                        <li>
+                            <h3 class="titre">Caissier</h3>
+                            <p class="date">Été 2019 & été 2020</p>
+                            <p class="lieu">Métro Voglans</p>
+                            <p class="info">Grossiste alimentaire pour les restaurateurs, hôtels et cafés</p>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Loisirs</h2>
+                    <ul>
+                        <li>Lecture, Randonnée, Badminton</li>
+                        <li>Gestion d'une communauté de joueurs</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </article>
+{% endblock %}

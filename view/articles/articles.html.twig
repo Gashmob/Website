@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articles{% endblock %}
+
+{% block bodytitle %}Mes articles{% endblock %}
+
+{% block body %}
+    <article>
+        {% if articles %}
+            <div class="article-list">
+                {% for article in articles %}
+                    <a href="#" class="article-list__item">
+                        <div>
+                            <h3>{{ article.title }}</h3>
+                            <span>{{ article.updatedAt|date("M Y") }}</span>
+                        </div>
+                        <p>{{ article.subtitle }}</p>
+                    </a>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>Aucun article</p>
+        {% endif %}
+    </article>
+{% endblock %}

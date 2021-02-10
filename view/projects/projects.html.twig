@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projets{% endblock %}
+
+{% block bodytitle %}Mes projets{% endblock %}
+
+{% block body %}
+    <article>
+        {% if projects %}
+            <div class="project-list">
+                {% for project in projects %}
+                    <a href="#" class="project-list__item">
+                        <img src="{{ asset('img/header.jpg') }}" alt=""/>
+                        <h3>{{ project.name }}</h3>
+                        <p>{{ project.description }}</p>
+                    </a>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>Aucun projet</p>
+        {% endif %}
+    </article>
+{% endblock %}

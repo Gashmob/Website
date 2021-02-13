@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Quicksand", sans-serif;
+}
+
+body {
+    background: linear-gradient(180deg, rgba(30, 144, 255, 1), rgba(0, 0, 0, 1));
+}
+
+.frame {
+    height: 100vh;
+}
+
+.ronds {
+    position: absolute;
+    width: 30%;
+    left: 35%;
+    top: 20%;
+}
+
+.ronds > * {
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    animation: rond_animation linear infinite;
+}
+
+.ronds .s {
+    animation-duration: 50s;
+}
+
+.ronds .m {
+    animation-duration: 60s;
+    animation-direction: reverse;
+}
+
+.ronds .l {
+    animation-duration: 120s;
+}
+
+@keyframes rond_animation {
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+.title-container {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    color: white;
+    font-size: 15rem;
+    z-index: 100;
+}
+
+.arrows > * {
+    display: block;
+    position: fixed;
+    width: 4%;
+    left: 48%;
+    z-index: 1000;
+
+    transition: 500ms ease;
+}
+
+.arrows .up {
+    top: 3%;
+}
+
+.arrows .up:hover {
+    cursor: pointer;
+    transform: translateY(-10px);
+}
+
+.arrows .down {
+    bottom: 3%;
+}
+
+.arrows .down:hover {
+    cursor: pointer;
+    transform: translateY(10px);
+}
+
+.points {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.points_container {
+    margin-left: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.point {
+    font-size: 3rem;
+    color: lightgrey;
+}
+
+.point.active {
+    font-size: 3.5em;
+    color: white;
+}

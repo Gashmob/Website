@@ -24,6 +24,12 @@
     height: 100vh;
 }
 
+.ronds_container {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+}
+
 .ronds {
     position: absolute;
     width: 30%;
@@ -84,7 +90,7 @@
     left: 48%;
     z-index: 1000;
 
-    transition: 500ms ease;
+    transition: 200ms ease;
 }
 
 .arrows .up {

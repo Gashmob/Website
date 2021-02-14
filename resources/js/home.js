@@ -4,7 +4,7 @@ const duration = 400;
 
 function showFrame() {
     // Change margin-top value to show frame id
-    $('.viewport').animate({marginTop: '-' + ((id -1) * window.innerHeight) + 'px'});
+    $('.viewport').animate({marginTop: '-' + ((id - 1) * window.innerHeight) + 'px'}, duration);
 }
 
 function showPoints() {
@@ -30,21 +30,24 @@ function showArrows() {
     }
 }
 
-showFrame();
-showPoints();
-showArrows();
+function setId(idN = 1) {
+    if (idN < 1)
+        id = 1;
+    else if (idN > idMax)
+        id = idMax;
+    else
+        id = idN;
+
+    showFrame();
+    showPoints();
+    showArrows();
+}
 
 $('.up').on('click', function () {
-    id--;
-    id = id < 1 ? 1 : id;
-    showFrame();
-    showPoints();
-    showArrows();
+    setId(id - 1);
 });
 $('.down').on('click', function () {
-    id++;
-    id = id > idMax ? idMax : id;
-    showFrame();
-    showPoints();
-    showArrows();
+    setId(id + 1);
 });
+
+setId();

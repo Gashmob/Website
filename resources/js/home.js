@@ -36,12 +36,14 @@ showArrows();
 
 $('.up').on('click', function () {
     id--;
+    id = id < 1 ? 1 : id;
     showFrame();
     showPoints();
     showArrows();
 });
 $('.down').on('click', function () {
     id++;
+    id = id > idMax ? idMax : id;
     showFrame();
     showPoints();
     showArrows();

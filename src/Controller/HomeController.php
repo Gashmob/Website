@@ -22,4 +22,12 @@ class HomeController extends AbstractController
     {
         return $this->render('home/homepage.html.twig');
     }
+
+    /**
+     * @Route(route="/cv", name="cv")
+     */
+    public function cv(): Response
+    {
+        return $this->render('home/cv.html.twig');
+    }
 }

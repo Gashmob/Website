@@ -157,4 +157,5 @@ a {
 
 a:hover {
     cursor: pointer;
+    border: none;
 }

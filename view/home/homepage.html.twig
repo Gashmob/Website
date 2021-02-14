@@ -14,6 +14,9 @@
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/home.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/utils.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+          integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
 </head>
 
 <body>
@@ -38,8 +41,23 @@
         </div>
 
         <div class="frame" id="2">
-            <div class="title-container">
-                <h1 class="title">Présentation</h1>
+            <div class="text_container">
+                <div class="row_container">
+                    <div class="row">
+                        <p style="text-indent: 2em">Étudiant en licence 3 d'informatique, je partage mon temps libre
+                            entre famille, lecture et
+                            programmation. Je réalise divers projet autant en web (sites, framework) qu'en logiciel
+                            (simulation, compilateur). Enfin je rédige quelques articles sur ce site quand j'ai quelques
+                            connaissances à partager.</p>
+                    </div>
+                    <div class="row">
+                        <p style="text-indent: 2em">Mon CV est disponible <a href="{{ route('home') }}">ici</a>, et
+                            retrouvez moi sur <a href="https://github.com/Gashmob" target="_blank"><i
+                                        class="fab fa-github" style="text-indent: 0"></i> Github</a> et <a
+                                    href="https://www.linkedin.com/in/kevin-traini/" target="_blank"><i
+                                        class="fab fa-linkedin" style="text-indent: 0"></i> Linkedin</a></p>
+                    </div>
+                </div>
             </div>
         </div>
 

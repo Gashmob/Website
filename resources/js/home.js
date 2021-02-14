@@ -1,13 +1,9 @@
 let id = 1;
-let idMax = 2;
+let idMax = 5;
 
 function showFrame() {
     // Set display none for all frames, then set display block for frame id
-    $.map($('.frame'), function (frame) {
-        frame.style.display = 'none';
-    });
-
-    $('.frame#' + id)[0].style.display = 'block';
+    $('.viewport')[0].style.marginTop = '-' + ((id -1) * window.innerHeight) + 'px';
 }
 
 function showPoints() {

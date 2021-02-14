@@ -18,5 +18,59 @@
 }
 
 .row {
+    padding: 3%;
+}
+
+.flex_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.flex_container > * {
+    margin: 0 .5em;
+}
+
+.card {
+    display: block;
+    width: 30%;
+    background: rgba(0, 0, 0, .20);
+    border-radius: 0.3em;
+    padding: 0.2em;
+    border: none;
+
+    transition: 200ms ease;
+}
+
+.card:hover {
+    text-decoration: none;
+    border: none;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.card_header {
+    display: flex;
+}
+
+.card_header > * {
+    width: 50%;
+    padding: 5%;
+}
+
+.card_header_img {
+    border-radius: 2em;
+}
+
+.card_header_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card_body {
+    font-size: 0.7em;
+    text-indent: 2em;
     padding: 5%;
 }

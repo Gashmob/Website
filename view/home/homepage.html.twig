@@ -30,12 +30,13 @@
                 <div class="text_container">
                     <div class="row_container">
                         <div class="row">
+                            <h2>Qui suis-je ?</h2>
+                        </div>
+                        <div class="row">
                             <p style="text-indent: 2em">Étudiant en licence 3 d'informatique, je partage mon temps libre
                                 entre famille, lecture et
                                 programmation. Je réalise divers projet autant en web (sites, framework) qu'en logiciel
-                                (simulation, compilateur). Enfin je rédige quelques articles sur ce site quand j'ai
-                                quelques
-                                connaissances à partager.</p>
+                                (simulation, compilateur).</p>
                         </div>
                         <div class="row">
                             <p style="text-indent: 2em">Mon CV est disponible <a href="{{ route('cv') }}">ici</a>, et
@@ -49,8 +50,33 @@
             </div>
 
             <div class="frame" id="3">
-                <div class="title-container">
-                    <h1 class="title">Mes projets</h1>
+                <div class="text_container">
+                    <div class="row_container">
+                        <div class="row">
+                            <h2>Mes projets</h2>
+                        </div>
+                        <div class="row flex_container" id="projets">
+                            <a class="card" href="#">
+                                <div class="card_header">
+                                    <img class="card_header_img" src="{{ asset('img/profil.png') }}" alt=""/>
+                                    <span class="card_header_text">Fork</span>
+                                </div>
+                                <div class="card_body">
+                                    <p>Framework php pour les petits sites</p>
+                                </div>
+                            </a>
+                            <a class="card" href="#">
+                                <div class="card_header">
+                                    <img class="card_header_img" src="{{ asset('img/profil.png') }}" alt=""/>
+                                    <span class="card_header_text">Fork</span>
+                                </div>
+                                <div class="card_body">
+                                    <p>Framework php pour les petits sites</p>
+                                </div>
+                            </a>
+                            <a href="#">Voir plus &gt;</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 

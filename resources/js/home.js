@@ -1,31 +1,32 @@
-let id = 2;
-let idMax = 5;
+let id = 1;
+let idMax = 4;
+const duration = 400;
 
 function showFrame() {
-    // Set display none for all frames, then set display block for frame id
-    $('.viewport')[0].style.marginTop = '-' + ((id -1) * window.innerHeight) + 'px';
+    // Change margin-top value to show frame id
+    $('.viewport').animate({marginTop: '-' + ((id -1) * window.innerHeight) + 'px'});
 }
 
 function showPoints() {
     // Set inactive for all points, then set active point id
-    $.map($('.point'), function (point) {
-        point.classList.remove('active');
-    });
+    let activePoint = $('.point.active');
+    if (activePoint)
+        activePoint.removeClass('active', duration)
 
-    $('#'+ id +'.point')[0].classList.add('active');
+    $('#' + id + '.point').addClass('active', duration);
 }
 
 function showArrows() {
     // Set display none for all arrows, then set display block for arrow up if id > 1 and for arrow down if id < idMax
     if (id > 1) {
-        $('.up')[0].style.display = 'block';
+        $('.up').fadeIn(duration);
     } else {
-        $('.up')[0].style.display = 'none';
+        $('.up').fadeOut(duration);
     }
     if (id < idMax) {
-        $('.down')[0].style.display = 'block';
+        $('.down').fadeIn(duration);
     } else {
-        $('.down')[0].style.display = 'none';
+        $('.down').fadeOut(duration);
     }
 }
 

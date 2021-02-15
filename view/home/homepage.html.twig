@@ -1,8 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block css %}
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/home.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/utils.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/home.css') }}"/>
 {% endblock %}
 
 {% block body %}
@@ -30,12 +30,12 @@
                 <div class="text_container">
                     <div class="row_container">
                         <div class="row">
-                            <h2>Qui suis-je ?</h2>
+                            <h2 style="text-align: center">Qui suis-je ?</h2>
                         </div>
                         <div class="row">
                             <p style="text-indent: 2em">Étudiant en licence 3 d'informatique, je partage mon temps libre
                                 entre famille, lecture et
-                                programmation. Je réalise divers projet autant en web (sites, framework) qu'en logiciel
+                                programmation. Je réalise divers projets autant en web (sites, framework) qu'en logiciel
                                 (simulation, compilateur).</p>
                         </div>
                         <div class="row">
@@ -53,28 +53,23 @@
                 <div class="text_container">
                     <div class="row_container">
                         <div class="row">
-                            <h2>Mes projets</h2>
+                            <h2 style="text-align: center">Mes projets</h2>
                         </div>
                         <div class="row flex_container" id="projets">
-                            <a class="card" href="#">
-                                <div class="card_header">
-                                    <img class="card_header_img" src="{{ asset('img/profil.png') }}" alt=""/>
-                                    <span class="card_header_text">Fork</span>
-                                </div>
-                                <div class="card_body">
-                                    <p>Framework php pour les petits sites</p>
-                                </div>
-                            </a>
-                            <a class="card" href="#">
-                                <div class="card_header">
-                                    <img class="card_header_img" src="{{ asset('img/profil.png') }}" alt=""/>
-                                    <span class="card_header_text">Fork</span>
-                                </div>
-                                <div class="card_body">
-                                    <p>Framework php pour les petits sites</p>
-                                </div>
-                            </a>
-                            <a href="#">Voir plus &gt;</a>
+                            {% for project in projects %}
+                                <a class="card" href="{{ project.link }}">
+                                    <!-- TODO: Rajouter la route pour voir le projet -->
+                                    <div class="card_header">
+                                        <img class="card_header_img" src="{{ asset('img/projects/' ~ project.img) }}"
+                                             alt=""/>
+                                        <span class="card_header_text">{{ project.name }}</span>
+                                    </div>
+                                    <div class="card_body">
+                                        <p>{{ project.description }}</p>
+                                    </div>
+                                </a>
+                            {% endfor %}
+                            <a href="{{ route('listProjects') }}">Voir plus &gt;</a>
                         </div>
                     </div>
                 </div>

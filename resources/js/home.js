@@ -50,4 +50,4 @@ $('.down').on('click', function () {
     setId(id + 1);
 });
 
-setId(3);
+setId(1);

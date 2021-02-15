@@ -146,6 +146,7 @@
 }
 
 .frame > .text_container {
+    width: 100%;
     padding: 5% 10%;
     color: white;
     font-size: 2em;
@@ -160,5 +161,5 @@ a {
 
 a:hover {
     cursor: pointer;
-    border: none;
+    border-color: transparent;
 }

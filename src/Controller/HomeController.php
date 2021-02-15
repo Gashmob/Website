@@ -2,6 +2,7 @@
 
 namespace Controller;
 
+use Entity\EntityManager;
 use Fork\Annotations\Route;
 use Fork\Controller\AbstractController;
 use Fork\Response\Response;
@@ -20,7 +21,16 @@ class HomeController extends AbstractController
      */
     public function homepage(): Response
     {
-        return $this->render('home/homepage.html.twig');
+        $projects = array([
+            'img' => 'img/fork.svg',
+            'title' => 'Fork',
+            'desc' => 'Framework php pour les petits sites',
+            'link' => 'fork'
+        ]);
+
+        return $this->render('home/homepage.html.twig', [
+            'projects' => EntityManager::get2Project()
+        ]);
     }
 
     /**
@@ -28,6 +38,7 @@ class HomeController extends AbstractController
      */
     public function cv(): Response
     {
+
         return $this->render('home/cv.html.twig');
     }
 }

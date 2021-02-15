@@ -11,6 +11,7 @@
 }
 
 .row_container {
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -18,14 +19,16 @@
 }
 
 .row {
+    width: 100%;
     padding: 3%;
 }
 
 .flex_container {
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: row;
-    align-items: center;
+    align-items: stretch;
 }
 
 .flex_container > * {
@@ -73,4 +76,30 @@
     font-size: 0.7em;
     text-indent: 2em;
     padding: 5%;
+}
+
+.card_load {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    background: rgba(0, 0, 0, .20);
+    border-radius: 0.3em;
+    padding: 0.2em;
+    border: none;
+}
+
+.hide {
+    display: none;
+}
+
+.card_load_img {
+    width: 50%;
+    animation: load 10s infinite linear;
+}
+
+@keyframes load {
+    100% {
+        transform: rotate(1turn);
+    }
 }

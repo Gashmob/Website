@@ -31,6 +31,7 @@ function showArrows() {
 }
 
 function setId(idN = 1) {
+    idN = parseInt(idN);
     if (idN < 1)
         id = 1;
     else if (idN > idMax)
@@ -48,6 +49,10 @@ $('.up').on('click', function () {
 });
 $('.down').on('click', function () {
     setId(id + 1);
+});
+
+$('.point').on('click', function (elem) {
+    setId(elem.target.id);
 });
 
 setId(1);

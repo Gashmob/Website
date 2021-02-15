@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     font-family: "Quicksand", sans-serif;
+    color: white;
 }
 
 .viewport-container {
@@ -162,4 +163,12 @@ a {
 a:hover {
     cursor: pointer;
     border-color: transparent;
+}
+
+.footer {
+    font-size: 2em;
+}
+
+.footer ul {
+    margin-left: 1.5em;
 }

@@ -9,7 +9,9 @@
 
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 article {
@@ -105,4 +107,14 @@ h2, h3 {
 
 p {
     line-height: 1.5;
+}
+
+.download {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+.download a:hover {
+    cursor: pointer;
 }

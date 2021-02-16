@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kevin Traini | Modération (projets){% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/manage.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="table_container">
+        <table>
+            <tr>
+                <th>Name</th>
+            </tr>
+            {% for project in projects %}
+                <tr>
+                    <td>{{ project.name }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kevin Traini | Modération{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/utils.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/manage.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="column_container">
+        <div class="column2">
+            <a class="card" href="{{ route('manage-project') }}">
+                <div class="card_header">
+                    <img class="card_header_img" src="{{ asset('img/assets/project-diagram-solid.svg') }}"
+                         alt=""/>
+                    <span class="card_header_text">Projets</span>
+                </div>
+                <div class="card_body">
+                    <p>Gestion des projets</p>
+                </div>
+            </a>
+
+        </div>
+        <div class="column2">
+            <a class="card" href="#">
+                <!-- TODO : Créer la route pour la gestion des articles -->
+                <div class="card_header">
+                    <img class="card_header_img" src="{{ asset('img/assets/align-left-solid.svg') }}"
+                         alt=""/>
+                    <span class="card_header_text">Articles</span>
+                </div>
+                <div class="card_body">
+                    <p>Gestion des articles</p>
+                </div>
+            </a>
+        </div>
+    </div>
+{% endblock %}

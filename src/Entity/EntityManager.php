@@ -2,6 +2,7 @@
 
 namespace Entity;
 
+use Fork\Database\Query\PreparedQuery;
 use Fork\Database\Query\Query;
 
 abstract class EntityManager
@@ -26,6 +27,19 @@ abstract class EntityManager
             ->getResult();
 
         return self::getProjectsFromArray($results);
+    }
+
+    /**
+     * @param string $name
+     * @return Project
+     */
+    public static function getProjectFromName(string $name): Project
+    {
+        $results = (new PreparedQuery('SELECT * FROM project WHERE name=?'))
+            ->setString($name)
+            ->getResult();
+
+        return self::getProjectsFromArray($results)[0];
     }
 
     // _.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-.

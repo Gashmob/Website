@@ -20,6 +20,8 @@
     "twig/twig": "^3.0",
     "gashmob/yaml-editor": "^1.2",
     "ext-json": "*",
-    "ext-mysqli": "*"
+    "ext-mysqli": "*",
+    "twig/markdown-extra": "^3.3",
+    "erusev/parsedown": "^1.7"
   }
 }

@@ -57,8 +57,7 @@
                         </div>
                         <div class="row flex_container" id="projets" style="align-items: center">
                             {% for project in projects %}
-                                <a class="card" href="{{ project.link }}">
-                                    <!-- TODO: Rajouter la route pour voir le projet -->
+                                <a class="card" href="{{ route('showProject', {'name': project.link}) }}">
                                     <div class="card_header">
                                         <img class="card_header_img" src="{{ asset('img/projects/' ~ project.img) }}"
                                              alt=""/>

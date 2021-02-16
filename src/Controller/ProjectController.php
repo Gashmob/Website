@@ -28,4 +28,27 @@ class ProjectController extends AbstractController
             'projects' => EntityManager::getAllProjects()
         ]);
     }
+
+    /**
+     * @Route(route="/project/{name}", name="showProject")
+     * @param $name
+     * @return Response
+     */
+    public function showProject($name): Response
+    {
+        $project = EntityManager::getProjectFromName($name);
+
+        $readme = '';
+        $filename = 'resources/readmes/' . $project->getReadme();
+        $file = fopen($filename, 'r');
+        if ($file) {
+            $readme = fread($file, filesize($filename));
+            fclose($file);
+        }
+
+        return $this->render('project/showProject.html.twig', [
+            'project' => $project,
+            'readme' => $readme
+        ]);
+    }
 }

@@ -38,6 +38,12 @@ class ProjectController extends AbstractController
     {
         $project = EntityManager::getProjectFromName($name);
 
+        if (is_null($project)) {
+            return $this->render('errors/errorProject.html.twig', [
+                'project' => $name
+            ]);
+        }
+
         $readme = '';
         $filename = 'resources/readmes/' . $project->getReadme();
         $file = fopen($filename, 'r');

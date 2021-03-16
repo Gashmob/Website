@@ -31,15 +31,15 @@ abstract class EntityManager
 
     /**
      * @param string $name
-     * @return Project
+     * @return Project|null
      */
-    public static function getProjectFromName(string $name): Project
+    public static function getProjectFromName(string $name): ?Project
     {
-        $results = (new PreparedQuery('SELECT * FROM project WHERE name=?'))
+        $results = (new PreparedQuery('SELECT * FROM project WHERE link=?'))
             ->setString($name)
             ->getResult();
 
-        return self::getProjectsFromArray($results)[0];
+        return count($results) > 0 ? self::getProjectsFromArray($results)[0] : null;
     }
 
     // _.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-.

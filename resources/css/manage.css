@@ -41,6 +41,7 @@ a {
 }
 
 table {
+    width: 100%;
     border: 2px solid black;
     color: white;
     border-collapse: collapse;
@@ -52,7 +53,8 @@ tr {
 }
 
 th, td {
-    padding: 5%;
+    text-align: left;
+    padding: 1%;
 }
 
 th {
@@ -62,4 +64,37 @@ th {
 
 td {
     background: rgba(0, 0, 0, .2);
+}
+
+input {
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.td_id {
+    display: none;
+}
+
+.td_action {
+    display: flex;
+    justify-content: space-around;
+}
+
+.button_accept {
+    background: none;
+    border: none;
+    font-size: inherit;
+    font-family: inherit;
+    color: green;
+}
+
+.button_accept:hover {
+    cursor: pointer;
+}
+
+.button_delete {
+    font-size: inherit;
+    font-family: inherit;
+    color: red;
 }

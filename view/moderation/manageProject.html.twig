@@ -11,11 +11,31 @@
         <table>
             <tr>
                 <th>Name</th>
+                <th>Description</th>
+                <th>Readme</th>
+                <th>Link</th>
+                <th>Git</th>
+                <th>Image</th>
+                <th>Action</th>
             </tr>
             {% for project in projects %}
-                <tr>
-                    <td>{{ project.name }}</td>
-                </tr>
+                <form action="{{ route('manage-project') }}" method="post">
+                    <tr>
+                        <td class="td_id"><input type="number" name="id" value="{{ project.id }}" readonly/></td>
+                        <td><input type="text" name="name" value="{{ project.name }}" required/></td>
+                        <td><input type="text" name="description" value="{{ project.description }}" required/></td>
+                        <td><input type="text" name="readme" value="{{ project.readme }}" required/></td>
+                        <td><input type="text" name="link" value="{{ project.link }}" required/></td>
+                        <td><input type="text" name="git" value="{{ project.git }}" required></td>
+                        <td><input type="text" name="img" value="{{ project.img }}" required></td>
+                        <td>
+                            <div class="td_action">
+                                <button class="button_accept" type="submit"><i class="fas fa-check"></i></button>
+                                <a class="button_delete" href="#"><i class="fas fa-times"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                </form>
             {% endfor %}
         </table>
     </div>

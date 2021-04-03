@@ -5,6 +5,7 @@ namespace Controller;
 
 
 use Entity\EntityManager;
+use Entity\Project;
 use Fork\Annotations\Route;
 use Fork\Controller\AbstractController;
 use Fork\Request\Request;
@@ -72,6 +73,19 @@ class ModerationController extends AbstractController
     public function manageProject(Session $session, Request $request)
     {
         if ($session->get('user')) {
+            if ($request->get('id')) {
+                $project = EntityManager::getProjectFromId($request->get('id'));
+                if (!is_null($project)) {
+                    $project->setName($request->get('name'))
+                        ->setDescription($request->get('description'))
+                        ->setReadme($request->get('git'))
+                        ->setLink($request->get('link'))
+                        ->setGit($request->get('git'))
+                        ->setImg($request->get('img'));
+                    $project->flush();
+                }
+            }
+
             return $this->render('moderation/manageProject.html.twig', [
                 'projects' => EntityManager::getAllProjects()
             ]);

@@ -42,6 +42,19 @@ abstract class EntityManager
         return count($results) > 0 ? self::getProjectsFromArray($results)[0] : null;
     }
 
+    /**
+     * @param int $id
+     * @return Project|null
+     */
+    public static function getProjectFromId(int $id): ?Project
+    {
+        $results = (new PreparedQuery('SELECT * FROM project WHERE id=?'))
+            ->setString($id)
+            ->getResult();
+
+        return count($results) > 0 ? self::getProjectsFromArray($results)[0] : null;
+    }
+
     // _.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-.
 
     /**

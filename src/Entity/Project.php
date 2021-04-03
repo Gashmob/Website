@@ -259,7 +259,8 @@ class Project
                 ->setString($this->link)
                 ->setString($this->git)
                 ->setString($this->img)
-                ->setInt($this->id);
+                ->setInt($this->id)
+                ->execute();
         }
     }
 }

@@ -33,6 +33,10 @@ article {
     width: 25%;
 }
 
+.cv__header-img img {
+    width: 100%;
+}
+
 .cv__header-text {
     width: 75%;
     display: flex;

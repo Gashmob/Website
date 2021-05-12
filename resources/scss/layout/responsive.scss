@@ -1,0 +1,29 @@
+@media (max-width: 599px) {
+  /* cv.scss */
+
+  article {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .cv_header_text_main {
+    font-size: 2em;
+  }
+
+  .cv_body {
+    padding: 0 10px;
+  }
+
+  .cv_body_row {
+    flex-direction: column;
+  }
+
+  .cv_body_card-3 {
+    width: auto;
+  }
+
+  /* _.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-. */
+  /* ... */
+}

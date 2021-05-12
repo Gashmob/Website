@@ -78,7 +78,7 @@
   padding: 5%;
 }
 .card_header_img {
-  border-radius: 2em;
+  border-radius: 1em;
 }
 .card_header_text {
   display: flex;
@@ -555,6 +555,12 @@ hr {
 
   .column_container {
     flex-direction: column;
+  }
+
+  /* _.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-._.-. */
+  /* projects.scss */
+  .projects_search label > * {
+    font-size: 0.5em;
   }
 }
 

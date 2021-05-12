@@ -74,15 +74,28 @@ class ModerationController extends AbstractController
     {
         if ($session->get('user')) {
             if ($request->get('id')) {
-                $project = EntityManager::getProjectFromId($request->get('id'));
-                if (!is_null($project)) {
-                    $project->setName($request->get('name'))
-                        ->setDescription($request->get('description'))
-                        ->setReadme($request->get('git'))
-                        ->setLink($request->get('link'))
-                        ->setGit($request->get('git'))
-                        ->setImg($request->get('img'));
-                    $project->flush();
+                if ($request->get('id') == -1) {
+                    $project = new Project(
+                        $request->get('name'),
+                        $request->get('description'),
+                        $request->get('git'),
+                        date(''),
+                        date('Y/m/d'),
+                        $request->get('link'),
+                        $request->get('git'),
+                        $request->get('img')
+                    );
+                } else {
+                    $project = EntityManager::getProjectFromId($request->get('id'));
+                    if (!is_null($project)) {
+                        $project->setName($request->get('name'))
+                            ->setDescription($request->get('description'))
+                            ->setReadme($request->get('git'))
+                            ->setLink($request->get('link'))
+                            ->setGit($request->get('git'))
+                            ->setImg($request->get('img'));
+                        $project->flush();
+                    }
                 }
             }
 

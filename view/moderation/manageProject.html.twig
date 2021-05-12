@@ -13,6 +13,7 @@
                 <th>Name</th>
                 <th>Description</th>
                 <th>Readme</th>
+                <th>Date</th>
                 <th>Link</th>
                 <th>Git</th>
                 <th>Image</th>
@@ -25,6 +26,7 @@
                         <td><input type="text" name="name" value="{{ project.name }}" required/></td>
                         <td><input type="text" name="description" value="{{ project.description }}" required/></td>
                         <td><input type="text" name="readme" value="{{ project.readme }}" required/></td>
+                        <td><input type="date" name="createdAt" value="{{ project.createdAt|date('d/m/Y') }}" required/></td>
                         <td><input type="text" name="link" value="{{ project.link }}" required/></td>
                         <td><input type="text" name="git" value="{{ project.git }}" required></td>
                         <td><input type="text" name="img" value="{{ project.img }}" required></td>
@@ -37,6 +39,23 @@
                     </tr>
                 </form>
             {% endfor %}
+            <form action="{{ route('manage-project') }}" method="post">
+                <tr>
+                    <td class="td_id"><input type="number" name="id" value="-1" readonly/></td>
+                    <td><input type="text" name="name" value="" required/></td>
+                    <td><input type="text" name="description" value="" required/></td>
+                    <td><input type="text" name="readme" value="" required/></td>
+                    <td><input type="date" name="createdAt" value="" required/></td>
+                    <td><input type="text" name="link" value="" required/></td>
+                    <td><input type="text" name="git" value="" required></td>
+                    <td><input type="text" name="img" value="" required></td>
+                    <td>
+                        <div class="td_action">
+                            <button class="button_accept" type="submit"><i class="fas fa-check"></i></button>
+                        </div>
+                    </td>
+                </tr>
+            </form>
         </table>
     </div>
 {% endblock %}

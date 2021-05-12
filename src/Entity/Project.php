@@ -236,10 +236,10 @@ class Project
     /**
      * Push data into database
      */
-    public function flush()
+    public function flush(): bool
     {
         if ($this->id == null) {
-            (new PreparedQuery('INSERT INTO project (name, description, readme, createdAt, updateAt, link, git, img) VALUES (?, ?, ?, ?, ?, ?, ?, ?)'))
+            return (new PreparedQuery('INSERT INTO project (name, description, readme, createdAt, updateAt, link, git, img) VALUES (?, ?, ?, ?, ?, ?, ?, ?)'))
                 ->setString($this->name)
                 ->setString($this->description)
                 ->setString($this->readme)
@@ -250,7 +250,7 @@ class Project
                 ->setString($this->img)
                 ->execute();
         } else {
-            (new PreparedQuery('UPDATE project SET name=?, description=?, readme=?, createdAt=?, updateAt=?, link=?, git=?, img=? WHERE id=?'))
+            return (new PreparedQuery('UPDATE project SET name=?, description=?, readme=?, createdAt=?, updateAt=?, link=?, git=?, img=? WHERE id=?'))
                 ->setString($this->name)
                 ->setString($this->description)
                 ->setString($this->readme)

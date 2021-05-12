@@ -1,0 +1,10 @@
+.link {
+  color: white;
+  text-decoration: none;
+  border-bottom: 2px solid white;
+
+  &:hover {
+    cursor: pointer;
+    border-color: transparent;
+  }
+}

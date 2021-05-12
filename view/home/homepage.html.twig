@@ -1,10 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block css %}
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/utils.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/home.css') }}"/>
-{% endblock %}
-
 {% block body %}
     <div class="arrows">
         <img class="up" src="{{ asset('img/assets/arrow_up.svg') }}" alt="">
@@ -21,7 +16,7 @@
                         <img class="l" src="{{ asset('img/assets/circle_L.svg') }}" alt=""/>
                     </div>
                 </div>
-                <div class="title-container">
+                <div class="title_container">
                     <h1 class="title">Kevin Traini</h1>
                 </div>
             </div>
@@ -39,10 +34,11 @@
                                 (simulation, compilateur).</p>
                         </div>
                         <div class="row">
-                            <p style="text-indent: 2em">Mon CV est disponible <a href="{{ route('cv') }}">ici</a>, et
-                                retrouvez moi sur <a href="https://github.com/Gashmob" target="_blank"><i
-                                            class="fab fa-github" style="text-indent: 0"></i> Github</a> et <a
-                                        href="https://www.linkedin.com/in/kevin-traini/" target="_blank"><i
+                            <p style="text-indent: 2em">Mon CV est disponible <a class="link" href="{{ route('cv') }}">ici</a>,
+                                et retrouvez moi sur <a class="link" href="https://github.com/Gashmob"
+                                                        target="_blank"><i class="fab fa-github"
+                                                                           style="text-indent: 0"></i> Github</a> et <a
+                                        class="link" href="https://www.linkedin.com/in/kevin-traini/" target="_blank"><i
                                             class="fab fa-linkedin" style="text-indent: 0"></i> Linkedin</a></p>
                         </div>
                     </div>
@@ -68,7 +64,7 @@
                                     </div>
                                 </a>
                             {% endfor %}
-                            <a href="{{ route('listProjects') }}">Voir plus &gt;</a>
+                            <a class="link" href="{{ route('listProjects') }}">Voir plus &gt;</a>
                         </div>
                     </div>
                 </div>
@@ -77,21 +73,21 @@
             <div class="frame" id="4">
                 <div class="text-container">
                     <div class="column_container footer">
-                        <div class="column2">
+                        <div class="column-2">
                             <p>Site créé par Kevin Traini avec le framework Fork</p>
                             <ul>
-                                <li><a href="https://github.com/Gashmob/Website/blob/master/LICENSE.md" target="_blank">Licence
+                                <li><a class="link" href="https://github.com/Gashmob/Website/blob/master/LICENSE.md" target="_blank">Licence
                                         MIT</a></li>
-                                <li><a href="https://github.com/Gashmob/Website">Code source</a></li>
+                                <li><a class="link" href="https://github.com/Gashmob/Website" target="_blank">Code source</a></li>
                             </ul>
                         </div>
-                        <div class="column2">
+                        <div class="column-2">
                             <p>Ressources utilisées</p>
                             <ul>
-                                <li><a href="https://jquery.com/" target="_blank">JQuery</a></li>
-                                <li><a href="https://jqueryui.com/" target="_blank">JQuery UI</a></li>
-                                <li><a href="https://fontawesome.com/" target="_blank">Font awesome</a></li>
-                                <li><a href="https://github.com/Gashmob/Fork" target="_blank">Fork</a></li>
+                                <li><a class="link" href="https://jquery.com/" target="_blank">JQuery</a></li>
+                                <li><a class="link" href="https://jqueryui.com/" target="_blank">JQuery UI</a></li>
+                                <li><a class="link" href="https://fontawesome.com/" target="_blank">Font awesome</a></li>
+                                <li><a class="link" href="https://github.com/Gashmob/Fork" target="_blank">Fork</a></li>
                             </ul>
                         </div>
                     </div>

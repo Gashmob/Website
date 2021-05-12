@@ -1,0 +1,4 @@
+$color-primary: dodgerblue;
+$color-accent: darken($color-primary, 10%);
+$color-secondary: black;
+$bg-color: linear-gradient(180deg, $color-primary, $color-secondary);

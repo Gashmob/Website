@@ -1,0 +1,17 @@
+@import "utils/variables";
+@import "utils/fonts";
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: 'Quicksand', sans-serif;
+}
+
+@import "components/containers";
+@import "components/link";
+
+@import "pages/homepage";
+@import "pages/cv";
+@import "pages/projects";
+@import "pages/project";

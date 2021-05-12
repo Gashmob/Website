@@ -61,7 +61,7 @@ public function redirect(string $route)
 ```
 Ce qui permet de faire des routes avec des variables. Vous pouvez également récupérer les variables de sessions, les cookies ou encore la requête en les passant dans les paramètres :
 ```php
-public function exempleWithParameters(\Fork\Request\Session $session, \Fork\Request\Cookie $cookie, \Fork\Request\Request $request) {}
+public function exampleWithParameters(\Fork\Request\Session $session, \Fork\Request\Cookie $cookie, \Fork\Request\Request $request) {}
 ```
 
 

@@ -493,6 +493,13 @@ hr {
 .project_readme a:hover {
   border-color: transparent;
 }
+.project_readme img {
+  max-width: 100%;
+}
+.project_readme hr {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
 
 @media (max-width: 599px) {
   /* cv.scss */

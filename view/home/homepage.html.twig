@@ -51,12 +51,12 @@
                         <div class="row">
                             <h2 style="text-align: center">Mes projets</h2>
                         </div>
-                        <div class="row flex_container" id="projets" style="align-items: center">
+                        <div class="row flex_container" id="projets">
                             {% for project in projects %}
                                 <a class="card" href="{{ route('showProject', {'name': project.link}) }}">
                                     <div class="card_header">
-                                        <img class="card_header_img" src="{{ asset('img/projects/' ~ project.img) }}"
-                                             alt=""/>
+                                        <img class="card_header_img"
+                                             src="{{ asset('img/projects/' ~ project.img) }}" alt=""/>
                                         <span class="card_header_text">{{ project.name }}</span>
                                     </div>
                                     <div class="card_body">
@@ -76,9 +76,11 @@
                         <div class="column-2">
                             <p>Site créé par Kevin Traini avec le framework Fork</p>
                             <ul>
-                                <li><a class="link" href="https://github.com/Gashmob/Website/blob/master/LICENSE.md" target="_blank">Licence
+                                <li><a class="link" href="https://github.com/Gashmob/Website/blob/master/LICENSE.md"
+                                       target="_blank">Licence
                                         MIT</a></li>
-                                <li><a class="link" href="https://github.com/Gashmob/Website" target="_blank">Code source</a></li>
+                                <li><a class="link" href="https://github.com/Gashmob/Website" target="_blank">Code
+                                        source</a></li>
                             </ul>
                         </div>
                         <div class="column-2">
@@ -86,7 +88,8 @@
                             <ul>
                                 <li><a class="link" href="https://jquery.com/" target="_blank">JQuery</a></li>
                                 <li><a class="link" href="https://jqueryui.com/" target="_blank">JQuery UI</a></li>
-                                <li><a class="link" href="https://fontawesome.com/" target="_blank">Font awesome</a></li>
+                                <li><a class="link" href="https://fontawesome.com/" target="_blank">Font awesome</a>
+                                </li>
                                 <li><a class="link" href="https://github.com/Gashmob/Fork" target="_blank">Fork</a></li>
                             </ul>
                         </div>

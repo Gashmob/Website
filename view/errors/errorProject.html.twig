@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kevin Traini | Erreur 404{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/errors/errors.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="error_container">
+        <img src="{{ asset('img/errors/error.svg') }}" alt="">
+        <p>Le projet '{{ project }}' n'existe pas</p>
+        <p><a href="{{ route('home') }}">Retour à l'accueil</a></p>
+    </div>
+{% endblock %}

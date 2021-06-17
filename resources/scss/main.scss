@@ -4,14 +4,16 @@
 * {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
   font-family: 'Quicksand', sans-serif;
 }
 
-@import "layout/menu";
-@import "layout/header";
-@import "layout/content";
+@import "components/containers";
+@import "components/link";
 
-@import "components/article_list";
-@import "components/project_list";
-
+@import "pages/homepage";
 @import "pages/cv";
+@import "pages/projects";
+@import "pages/project";
+
+@import "layout/responsive";

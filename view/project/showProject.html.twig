@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kevin Traini | {{ project.name }}{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/ocean.min.css">
+{% endblock %}
+
+{% block body %}
+    <div class="project_container">
+        <div class="row_container">
+            <div class="row project_header">
+                <img src="{{ asset('img/projects/' ~ project.img) }}" alt="">
+                <h1>{{ project.name }}</h1>
+            </div>
+            <div class="row project_body">
+                <div class="project_details">
+                    <p>Projet créé en {{ project.createdAt|date('F Y', false) }}</p>
+                    <a class="link" href="{{ project.git }}">{{ project.git }}</a>
+                </div>
+                <div class="project_readme">
+                    {{ readme|markdown_to_html }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+<script type="text/javascript" src="{{ asset('js/project.js') }}"></script>
+{% endblock %}

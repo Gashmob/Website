@@ -4,9 +4,10 @@
 namespace Controller;
 
 
+use Entity\EntityManager;
 use Fork\Annotations\Route;
 use Fork\Controller\AbstractController;
-use Fork\Database\Query\PreparedQuery;
+use Fork\Response\Response;
 
 class ProjectController extends AbstractController
 {
@@ -15,18 +16,45 @@ class ProjectController extends AbstractController
      */
     public function __construct()
     {
+
     }
 
     /**
-     * @Route(route="/projects", name="projects")
+     * @Route(route="/projects", name="listProjects")
      */
-    public function project_list()
+    public function listProjects(): Response
     {
-        $query = new PreparedQuery('SELECT name,description,updatedAt FROM project ORDER BY updatedAt DESC');
-        $projets = $query->getResult();
+        return $this->render('project/listProjects.html.twig', [
+            'projects' => EntityManager::getAllProjects()
+        ]);
+    }
 
-        return $this->render('projects/projects.html.twig', [
-            'projects' => $projets
+    /**
+     * @Route(route="/project/{name}", name="showProject")
+     * @param $name
+     * @return Response
+     */
+    public function showProject($name): Response
+    {
+        $project = EntityManager::getProjectFromName($name);
+
+        if (is_null($project)) {
+            return $this->render('errors/errorProject.html.twig', [
+                'project' => $name
+            ]);
+        }
+
+        $readme = '';
+        $filename = 'resources/readmes/' . $project->getReadme();
+        $file = fopen($filename, 'r');
+        if ($file) {
+            $readme = fread($file, filesize($filename));
+            fclose($file);
+        }
+
+        return $this->render('project/showProject.html.twig', [
+            'project' => $project,
+            'readme' => $readme
         ]);
     }
 }

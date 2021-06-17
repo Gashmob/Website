@@ -1,0 +1,123 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kevin Traini | CV{% endblock %}
+
+{% block body %}
+    <div class="cv_container">
+        <article>
+            <div class="cv_header">
+                <div class="cv_header_img">
+                    <img src="{{ asset('img/profil.png') }}" alt="">
+                </div>
+                <div class="cv_header_text">
+                    <div class="cv_header_text_main">
+                        <span>Kevin Traini</span>
+                    </div>
+                    <hr/>
+                    <div class="cv_header_text_sub">
+                        <span><i class="fas fa-at"></i> <a class="cv_a" href="mailto:kevin@ktraini.com">kevin@ktraini.com</a></span>
+                        <span><i class="fab fa-linkedin"></i> <a class="cv_a"
+                                                                 href="https://www.linkedin.com/in/kevin-traini/"
+                                                                 target="_blank">Kevin Traini</a></span>
+                        <span><i class="fab fa-github"></i> <a class="cv_a" href="https://github.com/Gashmob"
+                                                               target="_blank">Gashmob</a></span>
+                        <span><i class="fas fa-globe"></i> <a class="cv_a" href="https://ktraini.com"
+                                                              target="_blank">ktraini.com</a></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cv_body">
+                <h2 class="cv_body_header"><i class="fas fa-university"></i> Formations</h2>
+                <div class="cv_body_card">
+                    <h3 class="cv_body_title">DEUG Informatique</h3>
+                    <span class="cv_body_date">2020</span>
+                    <span class="cv_body_lieu">Université Savoie Mont-Blanc</span>
+                </div>
+                <div class="cv_body_card">
+                    <h3 class="cv_body_title">Bac scientifique option ISN (Informatique et Sciences du Numérique)</h3>
+                    <span class="cv_body_date">2018</span>
+                    <span class="cv_body_lieu">Lycée Polivalent Marlioz</span>
+                    <span class="cv_body_info">Mention assez bien</span>
+                </div>
+            </div>
+
+            <div class="cv_body">
+                <h2 class="cv_body_header"><i class="fas fa-cogs"></i> Compétences</h2>
+                <div class="cv_body_row">
+                    <div class="cv_body_card-3">
+                        <h3 class="cv_body_title">Paradigmes</h3>
+                        <ul class="cv_body_list">
+                            <li>Orienté objet</li>
+                            <li>Fonctionnel</li>
+                            <li>Évènementiel</li>
+                            <li>Impératif</li>
+                        </ul>
+                    </div>
+                    <div class="cv_body_card-3">
+                        <h3 class="cv_body_title">Langages</h3>
+                        <ul class="cv_body_list">
+                            <li>C++ / C</li>
+                            <li>Java</li>
+                            <li>Php / Javascript</li>
+                            <li>Python</li>
+                            <li>OCaml</li>
+                        </ul>
+                    </div>
+                    <div class="cv_body_card-3">
+                        <h3 class="cv_body_title">Technologies</h3>
+                        <ul class="cv_body_list">
+                            <li>Symfony</li>
+                            <li>MySQL / Neo4j</li>
+                            <li>Node.js</li>
+                            <li>Android</li>
+                            <li>Godot</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cv_body">
+                <h2 class="cv_body_header"><i class="fas fa-dolly"></i> Expériences</h2>
+                <div class="cv_body_card">
+                    <h3 class="cv_body_title">Caissier</h3>
+                    <span class="cv_body_date">Été 2019 & 2020</span>
+                    <span class="cv_body_info">Métro (grossiste alimentaire CHR)</span>
+                </div>
+                <div class="cv_body_card">
+                    <h3 class="cv_body_title">Stagiaire</h3>
+                    <span class="cv_body_date">Juin 2021</span>
+                    <span class="cv_body_info">LAMA (LAboratoire de MAthématiques)</span>
+                </div>
+            </div>
+
+            <div class="cv_body">
+                <h2 class="cv_body_header"><i class="fas fa-globe"></i> Langues</h2>
+                <ul class="cv_body_list">
+                    <li>Français</li>
+                    <li>Anglais</li>
+                </ul>
+            </div>
+
+            <div class="cv_body">
+                <h2 class="cv_body_header"><i class="far fa-question-circle"></i> Autres</h2>
+                <div class="cv_body_card">
+                    <h3 class="cv_body_title">Permis B</h3>
+                    <span class="cv_body_info">Conduite accompagnée</span>
+                </div>
+                <div class="cv_body_card">
+                    <h3 class="cv_body_title">PSC1</h3>
+                    <span class="cv_body_date">2012</span>
+                    <span class="cv_body_info">Prévention et secours civiques de niveau 1</span>
+                </div>
+            </div>
+        </article>
+        <div class="download">
+            <h3>Téléchargement</h3>
+            <div class="column_container">
+                <a class="column2 cv_a" href="{{ asset('cv/Kevin-Traini_CV.png') }}" target="_blank">Image</a>
+                <a class="column2 cv_a" href="{{ asset('cv/Kevin-Traini_CV.pdf') }}" target="_blank">Pdf</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

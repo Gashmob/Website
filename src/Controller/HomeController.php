@@ -2,9 +2,10 @@
 
 namespace Controller;
 
+use Entity\EntityManager;
 use Fork\Annotations\Route;
 use Fork\Controller\AbstractController;
-use Fork\Database\Query\PreparedQuery;
+use Fork\Response\Response;
 
 class HomeController extends AbstractController
 {
@@ -18,33 +19,26 @@ class HomeController extends AbstractController
     /**
      * @Route(route="/", name="home")
      */
-    public function homepage()
+    public function homepage(): Response
     {
-        $query = new PreparedQuery('SELECT title,subtitle,updatedAt FROM article ORDER BY updatedAt DESC LIMIT 5');
-        $articles = $query->getResult();
-
-        $query = new PreparedQuery('SELECT name,description,updatedAt FROM project ORDER BY updatedAt DESC LIMIT 4');
-        $projets = $query->getResult();
+        $projects = array([
+            'img' => 'img/fork.svg',
+            'title' => 'Fork',
+            'desc' => 'Framework php pour les petits sites',
+            'link' => 'fork'
+        ]);
 
         return $this->render('home/homepage.html.twig', [
-            'articles' => $articles,
-            'projects' => $projets
+            'projects' => EntityManager::get2Project()
         ]);
     }
 
     /**
      * @Route(route="/cv", name="cv")
      */
-    public function cv()
+    public function cv(): Response
     {
-        return $this->render('cv/cv.html.twig');
-    }
 
-    /**
-     * @Route(route="/contact", name="contact")
-     */
-    public function contact()
-    {
-        return $this->render('contact/contact.html.twig');
+        return $this->render('home/cv.html.twig');
     }
 }

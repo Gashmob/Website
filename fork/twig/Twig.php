@@ -8,7 +8,11 @@ use Fork\Kernel\Kernel;
 use Fork\Kernel\Router;
 use Twig\Environment;
 use Twig\Extension\DebugExtension;
+use Twig\Extra\Markdown\DefaultMarkdown;
+use Twig\Extra\Markdown\MarkdownExtension;
+use Twig\Extra\Markdown\MarkdownRuntime;
 use Twig\Loader\FilesystemLoader;
+use Twig\RuntimeLoader\RuntimeLoaderInterface;
 use Twig\TwigFunction;
 use YamlEditor\Exceptions\PathNotFoundException;
 use YamlEditor\YamlFile;
@@ -47,6 +51,15 @@ class Twig
             ]);
 
         $this->twig->addExtension(new DebugExtension());
+        $this->twig->addExtension(new MarkdownExtension());
+        $this->twig->addRuntimeLoader(new class implements RuntimeLoaderInterface {
+            public function load($class)
+            {
+                if (MarkdownRuntime::class === $class) {
+                    return new MarkdownRuntime(new DefaultMarkdown());
+                }
+            }
+        });
         $this->addFunctions();
     }
 

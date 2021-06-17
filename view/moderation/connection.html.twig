@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kevin Traini | Connexion{% endblock %}
+
+{% block body %}
+    <div class="connection_container">
+        <form method="post">
+            <div class="input_row">
+                <label>
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="login" placeholder="login" required>
+                </label>
+                <label>
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" placeholder="password" required>
+                </label>
+            </div>
+            <div class="input_row">
+                <input type="submit" value="Connexion">
+            </div>
+        </form>
+    </div>
+{% endblock %}

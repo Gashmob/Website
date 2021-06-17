@@ -6,6 +6,5 @@
   "scripts": {
     "sass": "sass --watch main.scss:../css/main.css"
   },
-  "author": "",
-  "license": "ISC"
+  "author": ""
 }

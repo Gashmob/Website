@@ -1,62 +1,82 @@
 <?php
 
+namespace Entity;
 
+use Fork\Database\Query\PreparedQuery;
+
+
+/**
+ * Class Project
+ * represent the project in database
+ */
 class Project
 {
     /**
      * @var int
      */
     private $id;
-
     /**
      * @var string
      */
     private $name;
-
     /**
      * @var string
      */
     private $description;
-
+    /**
+     * @var string
+     */
+    private $readme;
+    /**
+     * @var string
+     */
+    private $createdAt;
+    /**
+     * @var string
+     */
+    private $updatedAt;
+    /**
+     * @var string
+     */
+    private $link;
     /**
      * @var string
      */
     private $git;
-
     /**
      * @var string
      */
-    private $state;
-
-    /**
-     * Array of string
-     * @var array
-     */
-    private $keywords;
+    private $img;
 
     /**
      * Project constructor.
-     * @param int $id
      * @param string $name
      * @param string $description
+     * @param string $readme
+     * @param string $createdAt
+     * @param string $updatedAt
+     * @param string $link
      * @param string $git
-     * @param string $state
-     * @param array $keywords Array of string
+     * @param string $img
+     * @param int|null $id
      */
-    public function __construct($id, $name, $description, $git, $state, array $keywords)
+    public function __construct(string $name, string $description, string $readme, string $createdAt, string $updatedAt, string $link, string $git, string $img, int $id = null)
     {
-        $this->id = $id;
         $this->name = $name;
         $this->description = $description;
+        $this->readme = $readme;
+        $this->createdAt = $createdAt;
+        $this->updatedAt = $updatedAt;
+        $this->link = $link;
         $this->git = $git;
-        $this->state = $state;
-        $this->keywords = $keywords;
+        $this->img = $img;
+        $this->id = $id;
     }
 
     /**
      * @return int
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -64,102 +84,183 @@ class Project
     /**
      * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
 
     /**
      * @param string $name
+     * @return Project
      */
-    public function setName($name)
+    public function setName(string $name): Project
     {
         $this->name = $name;
+
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->description;
     }
 
     /**
      * @param string $description
+     * @return Project
      */
-    public function setDescription($description)
+    public function setDescription(string $description): Project
     {
         $this->description = $description;
+
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getGit()
+    public function getReadme(): string
+    {
+        return $this->readme;
+    }
+
+    /**
+     * @param string $readme
+     * @return Project
+     */
+    public function setReadme(string $readme): Project
+    {
+        $this->readme = $readme;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCreatedAt(): string
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @param string $createdAt
+     * @return Project
+     */
+    public function setCreatedAt(string $createdAt): Project
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUpdatedAt(): string
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @param string $updatedAt
+     * @return Project
+     */
+    public function setUpdatedAt(string $updatedAt): Project
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLink(): string
+    {
+        return $this->link;
+    }
+
+    /**
+     * @param string $link
+     * @return Project
+     */
+    public function setLink(string $link): Project
+    {
+        $this->link = $link;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getGit(): string
     {
         return $this->git;
     }
 
     /**
      * @param string $git
+     * @return Project
      */
-    public function setGit($git)
+    public function setGit(string $git): Project
     {
         $this->git = $git;
+
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getState()
+    public function getImg(): string
     {
-        return $this->state;
+        return $this->img;
     }
 
     /**
-     * @param string $state
+     * @param string $img
+     * @return Project
      */
-    public function setState($state)
+    public function setImg(string $img): Project
     {
-        $this->state = $state;
+        $this->img = $img;
+
+        return $this;
     }
 
     /**
-     * @return array
+     * Push data into database
      */
-    public function getKeywords()
+    public function flush(): bool
     {
-        return $this->keywords;
-    }
-
-    /**
-     * @param string|array $keyword
-     */
-    public function addKeyword($keyword)
-    {
-        if (is_array($keyword))
-            foreach ($keyword as $key) {
-                if (!in_array($key, $this->keywords))
-                    $this->keywords[] = $key;
-            }
-        else
-            if (!in_array($keyword, $this->keywords))
-                $this->keywords[] = $keyword;
-    }
-
-
-    /**
-     * @param string|array $keyword
-     */
-    public function removeKeyword($keyword)
-    {
-        if (is_array($keyword))
-            foreach ($keyword as $key) {
-                if (!in_array($key, $this->keywords))
-                    $this->keywords[] = array_diff($this->keywords, [$key]);
-            }
-        else
-            $this->keywords = array_diff($this->keywords, [$keyword]);
+        if ($this->id == null) {
+            return (new PreparedQuery('INSERT INTO project (name, description, readme, createdAt, updateAt, link, git, img) VALUES (?, ?, ?, ?, ?, ?, ?, ?)'))
+                ->setString($this->name)
+                ->setString($this->description)
+                ->setString($this->readme)
+                ->setString($this->createdAt)
+                ->setString($this->updatedAt)
+                ->setString($this->link)
+                ->setString($this->git)
+                ->setString($this->img)
+                ->execute();
+        } else {
+            return (new PreparedQuery('UPDATE project SET name=?, description=?, readme=?, createdAt=?, updateAt=?, link=?, git=?, img=? WHERE id=?'))
+                ->setString($this->name)
+                ->setString($this->description)
+                ->setString($this->readme)
+                ->setString($this->createdAt)
+                ->setString($this->updatedAt)
+                ->setString($this->link)
+                ->setString($this->git)
+                ->setString($this->img)
+                ->setInt($this->id)
+                ->execute();
+        }
     }
 }

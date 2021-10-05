@@ -513,13 +513,13 @@ hr {
   margin-bottom: 1%;
 }
 
-@media (max-width: 599px) {
+@media (max-width: 1500px) {
   /* cv.scss */
   article {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    box-shadow: none;
+    width: 60%;
+    margin: 2%;
+    padding: 2%;
+    box-shadow: 1px 1px 12px #555;
   }
 
   .cv_header_text_main {
@@ -601,6 +601,28 @@ hr {
 
   .project_readme {
     font-size: 1em;
+  }
+}
+@media (max-width: 1000px) {
+  /* cv.scss */
+  article {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .cv_header_text_main {
+    font-size: 2em;
+  }
+  .cv_body {
+    padding: 0 10px;
+  }
+  .cv_body_row {
+    flex-direction: column;
+  }
+  .cv_body_card-3 {
+    width: auto;
   }
 }
 

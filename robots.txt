@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: http://ktraini.com/sitemap.xml

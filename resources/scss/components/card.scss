@@ -28,7 +28,7 @@
 
     &_title {
       font-weight: bolder;
-      font-size: 24px;
+      font-size: 32px;
     }
 
     &_categories {
@@ -43,6 +43,7 @@
       background-color: $light-grey;
       margin-right: 5px;
       border-radius: 10px;
+      font-style: italic;
     }
 
     &_description {

@@ -38,7 +38,7 @@
 }
 .card_text_title {
   font-weight: bolder;
-  font-size: 24px;
+  font-size: 32px;
 }
 .card_text_categories {
   list-style: none;
@@ -51,6 +51,7 @@
   background-color: #D1D3D4;
   margin-right: 5px;
   border-radius: 10px;
+  font-style: italic;
 }
 .card_text_description {
   text-indent: 2em;
@@ -149,6 +150,7 @@
   color: #FFFFFF;
   text-decoration: none;
   border-radius: 10px;
+  font-size: 24px;
 }
 .home_section.footer {
   height: 20vh;
@@ -185,6 +187,9 @@
 .home_footer .footer_section {
   color: #FFFFFF;
   font-size: 24px;
+}
+.home_footer .footer_section * {
+  font-family: monospace;
 }
 .home_footer .footer_section a {
   color: #A7A9AC;

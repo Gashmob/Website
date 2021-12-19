@@ -110,6 +110,10 @@
         border-radius: 10px;
       }
     }
+
+    &.footer {
+      height: 20vh;
+    }
   }
 
   &_header {
@@ -134,6 +138,28 @@
 
       .fas {
         font-size: 9px;
+      }
+    }
+  }
+
+  &_footer {
+    height: 80vh;
+    background-color: $black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .footer_section {
+      color: $white;
+      font-size: 24px;
+
+      a {
+        color: $grey;
+        text-decoration: none;
+      }
+
+      li {
+        margin-left: 1em;
       }
     }
   }

@@ -150,6 +150,9 @@
   text-decoration: none;
   border-radius: 10px;
 }
+.home_section.footer {
+  height: 20vh;
+}
 .home_header {
   position: absolute;
   display: flex;
@@ -171,6 +174,24 @@
 }
 .home_header a .fas {
   font-size: 9px;
+}
+.home_footer {
+  height: 80vh;
+  background-color: #000000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.home_footer .footer_section {
+  color: #FFFFFF;
+  font-size: 24px;
+}
+.home_footer .footer_section a {
+  color: #A7A9AC;
+  text-decoration: none;
+}
+.home_footer .footer_section li {
+  margin-left: 1em;
 }
 
 /*# sourceMappingURL=main.css.map */

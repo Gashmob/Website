@@ -77,9 +77,30 @@
         </div>
     </section>
 
-    <section class="home_section" id="foot" style="background-color: black"> <!-- Footer -->
-
+    <section class="home_section footer" id="foot"> <!-- Footer -->
+        <!-- Juste pour faire de la place -->
     </section>
+
+    <footer class="home_footer">
+        <div class="footer_section">
+            <p>Site créé par Kevin Traini en
+                <a href="https://github.com/Gashmob/Website" target="_blank">open source</a>
+                sous licence <a href="https://github.com/Gashmob/Website/blob/master/LICENSE.md">GNU GPL 3.0</a></p>
+        </div>
+        <div class="footer_section">
+            <p>Ressources utilisées</p>
+            <ul>
+                <li><a class="link" href="https://jquery.com/" target="_blank">JQuery</a></li>
+                <li><a class="link" href="https://jqueryui.com/" target="_blank">JQuery UI</a></li>
+                <li><a class="link" href="https://fontawesome.com/" target="_blank">Font awesome</a></li>
+                <li><a class="link" href="https://github.com/Gashmob/Fork" target="_blank">Fork</a></li>
+            </ul>
+        </div>
+        <div class="footer_section">
+            <p>Hébergé chez OVH Cloud</p>
+            <p>2 rue Kellermann 59100 Roubaix</p>
+        </div>
+    </footer>
 {% endblock %}
 
 {% block javascript %}<script src="{{ asset('js/home.js') }}"></script>{% endblock %}

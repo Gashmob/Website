@@ -1,0 +1,53 @@
+@import "../utils/variables";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 350px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 2px solid $blue_grey;
+  color: inherit;
+  text-decoration: none;
+
+  &_gradiant {
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, $dark-blue 0%, $blue 100%);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  &_text {
+    padding: 10px;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+
+    &_title {
+      font-weight: bolder;
+      font-size: 24px;
+    }
+
+    &_categories {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      margin: 10px 0;
+    }
+
+    &_category {
+      padding: 2px 10px;
+      background-color: $light-grey;
+      margin-right: 5px;
+      border-radius: 10px;
+    }
+
+    &_description {
+      text-indent: 2em;
+      text-align: justify;
+    }
+  }
+}

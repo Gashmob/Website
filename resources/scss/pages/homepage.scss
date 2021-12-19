@@ -66,8 +66,8 @@
     &.presentation {
       height: 120vh;
       background: rgb(1, 25, 49);
-      background: linear-gradient(135deg, rgba(1, 25, 49, 1) 0%, rgba(1, 55, 152, 1) 75%, rgba(0, 85, 255, 1) 100%);
-      color: white;
+      background: linear-gradient(135deg, $dark-blue 0%, rgba(1, 55, 152, 1) 75%, $blue 100%);
+      color: $white;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -77,6 +77,37 @@
         width: 60%;
         text-indent: 2em;
         text-align: justify;
+      }
+    }
+
+    &.projets {
+      height: 120vh;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      h1 {
+        padding-bottom: 100px;
+        padding-left: 200px;
+        font-size: 48px;
+      }
+
+      .cards {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .card {
+          margin: 0 25px;
+        }
+      }
+
+      .plus {
+        background-color: $blue;
+        padding: 5px 15px;
+        color: $white;
+        text-decoration: none;
+        border-radius: 10px;
       }
     }
   }

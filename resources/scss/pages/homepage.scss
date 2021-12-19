@@ -38,6 +38,47 @@
         z-index: -1;
       }
     }
+
+    &.citations {
+      height: 120vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
+
+      span {
+        font-size: 32px;
+        width: 80%;
+
+        &.left {
+          text-align: left;
+          padding-left: 20%;
+        }
+
+        &.right {
+          text-align: right;
+          padding-right: 20%;
+        }
+      }
+    }
+
+    &.presentation {
+      height: 120vh;
+      background: rgb(1, 25, 49);
+      background: linear-gradient(135deg, rgba(1, 25, 49, 1) 0%, rgba(1, 55, 152, 1) 75%, rgba(0, 85, 255, 1) 100%);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 32px;
+
+      span {
+        width: 60%;
+        text-indent: 2em;
+        text-align: justify;
+      }
+    }
   }
 
   &_header {

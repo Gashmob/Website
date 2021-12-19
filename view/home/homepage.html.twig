@@ -5,7 +5,7 @@
 {% block body %}
     <header class="home_header">
         <a href="{{ route("home") }}">Accueil</a>
-        <a href="#">Projets</a>
+        <a href="#proj">Projets</a>
         <a href="#">CV</a>
         <a href="https://github.com/Gashmob" target="_blank">Github</a>
         <a href="https://gitlab.com/Gashmob" target="_blank">Gitlab</a>
@@ -20,19 +20,22 @@
         </div>
     </section>
 
-    <section class="home_section" id="cit"> <!-- Citations -->
+    <section class="home_section citations" id="cit"> <!-- Citations -->
+        <span class="left"><i class="fas fa-quote-left"></i> Ils ne savaient pas que c'était impossible, donc ils l'ont fait
+            <i class="fas fa-quote-right"></i></span>
+        <span class="right"><i class="fas fa-quote-left"></i> Pourquoi réfléchir quand on peut penser ?
+            <i class="fas fa-quote-right"></i></span>
+    </section>
+
+    <section class="home_section presentation" id="pres"> <!-- Présentation -->
+        <span>Étudiant en 2ᵉ année à l'Ensimag dans la filière Ingénierie des Systèmes d'Information, je partage mon temps libre entre famille, lecture et programmation. Je réalise divers projets autant en web (sites, framework) qu'en logiciel (simulation, compilateur).</span>
+    </section>
+
+    <section class="home_section" id="proj"> <!-- Projets -->
 
     </section>
 
-    <section class="home_section"> <!-- Présentation -->
-
-    </section>
-
-    <section class="home_section"> <!-- Projets -->
-
-    </section>
-
-    <section class="home_section"> <!-- Footer -->
+    <section class="home_section" id="foot"> <!-- Footer -->
 
     </section>
 {% endblock %}

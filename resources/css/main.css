@@ -43,6 +43,41 @@
   left: 0;
   z-index: -1;
 }
+.home_section.citations {
+  height: 120vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+.home_section.citations span {
+  font-size: 32px;
+  width: 80%;
+}
+.home_section.citations span.left {
+  text-align: left;
+  padding-left: 20%;
+}
+.home_section.citations span.right {
+  text-align: right;
+  padding-right: 20%;
+}
+.home_section.presentation {
+  height: 120vh;
+  background: #011931;
+  background: linear-gradient(135deg, #011931 0%, #013798 75%, #0055ff 100%);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+}
+.home_section.presentation span {
+  width: 60%;
+  text-indent: 2em;
+  text-align: justify;
+}
 .home_header {
   position: absolute;
   display: flex;

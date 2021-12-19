@@ -1,0 +1,17 @@
+@import "utils/variables";
+@import "utils/fonts";
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: 'Raleway', sans-serif;
+
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@import "pages/homepage";

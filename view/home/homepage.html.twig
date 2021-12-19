@@ -1,12 +1,40 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Fork{% endblock %}
-
+{% block title %}Accueil{% endblock %}
 
 {% block body %}
-    <div>
-        <img src="{{ asset('img/fork.svg') }}" alt="Fork"/>
-        <h1>Fork</h1>
-        <p>Page de base du framework</p>
-    </div>
+    <header class="home_header">
+        <a href="{{ route("home") }}">Accueil</a>
+        <a href="#">Projets</a>
+        <a href="#">CV</a>
+        <a href="https://github.com/Gashmob" target="_blank">Github</a>
+        <a href="https://gitlab.com/Gashmob" target="_blank">Gitlab</a>
+        <a href="https://www.linkedin.com/in/kevin-traini" target="_blank">Linkedin</a>
+    </header>
+
+    <section class="home_section accueil"> <!-- Accueil -->
+        <canvas id="myCanvas"></canvas>
+        <div>
+            <span>Kevin TRAINI</span>
+            <a href="#cit" class="down"><i class="fas fa-angle-down"></i></a>
+        </div>
+    </section>
+
+    <section class="home_section" id="cit"> <!-- Citations -->
+
+    </section>
+
+    <section class="home_section"> <!-- Présentation -->
+
+    </section>
+
+    <section class="home_section"> <!-- Projets -->
+
+    </section>
+
+    <section class="home_section"> <!-- Footer -->
+
+    </section>
 {% endblock %}
+
+{% block javascript %}<script src="{{ asset('js/home.js') }}"></script>{% endblock %}

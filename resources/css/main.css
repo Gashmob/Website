@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: "Raleway", sans-serif;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.home_section {
+  height: 100vh;
+}
+.home_section.accueil div {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 128px;
+}
+.home_section.accueil div .down {
+  position: absolute;
+  bottom: 10px;
+  color: white;
+  text-decoration: none;
+  transition: bottom 200ms ease;
+  font-size: 96px;
+}
+.home_section.accueil div .down:hover {
+  cursor: pointer;
+  bottom: 2px;
+}
+.home_section.accueil #myCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.home_header {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  background-color: transparent;
+}
+.home_header a {
+  padding: 5px;
+  margin: 20px;
+  font-size: 25px;
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: transparent;
+  transition: color 500ms ease;
+}
+.home_header a:hover {
+  color: #A7A9AC;
+}
+.home_header a .fas {
+  font-size: 9px;
+}
+
+/*# sourceMappingURL=main.css.map */

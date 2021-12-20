@@ -7,7 +7,7 @@ use Fork\Controller\AbstractController;
 use Fork\Response\Response;
 use ProjectManager;
 
-class HomeController extends AbstractController
+class MainController extends AbstractController
 {
 
     /**

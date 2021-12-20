@@ -34,46 +34,27 @@
     <section class="home_section projets" id="proj"> <!-- Projets -->
         <h1>Projets</h1>
         <div class="cards">
-            <a href="#" class="card">
-                <div class="card_gradiant"></div>
-                <div class="card_text">
-                    <span class="card_text_title">Titre</span>
-                    <ul class="card_text_categories">
-                        <li class="card_text_category">Categorie 1</li>
-                        <li class="card_text_category">Categorie 2</li>
-                    </ul>
-                    <p class="card_text_description">
-                        Une description pour un projet quelconque.
-                    </p>
-                </div>
-            </a>
-            <a href="#" class="card">
-                <div class="card_gradiant"></div>
-                <div class="card_text">
-                    <span class="card_text_title">Titre</span>
-                    <ul class="card_text_categories">
-                        <li class="card_text_category">Categorie 1</li>
-                        <li class="card_text_category">Categorie 2</li>
-                    </ul>
-                    <p class="card_text_description">
-                        Une description pour un projet quelconque.
-                    </p>
-                </div>
-            </a>
-            <a href="#" class="card">
-                <div class="card_gradiant"></div>
-                <div class="card_text">
-                    <span class="card_text_title">Titre</span>
-                    <ul class="card_text_categories">
-                        <li class="card_text_category">Categorie 1</li>
-                        <li class="card_text_category">Categorie 2</li>
-                    </ul>
-                    <p class="card_text_description">
-                        Une description pour un projet quelconque.
-                    </p>
-                </div>
-            </a>
-            <a class="plus" href="#">Voir plus &nbsp; <i class="fas fa-angle-right"></i></a>
+            {% if projects is empty %}
+                <p style="font-size: 32px">Aucun projet</p>
+            {% else %}
+                {% for project in projects %}
+                    <a href="{{ project.link }}" class="card" target="_blank">
+                        <div class="card_gradiant"></div>
+                        <div class="card_text">
+                            <span class="card_text_title">{{ project.name }}</span>
+                            <ul class="card_text_categories">
+                                {% for category in project.categories %}
+                                    <li class="card_text_category">{{ category.name }}</li>
+                                {% endfor %}
+                            </ul>
+                            <p class="card_text_description">
+                                {{ project.description }}
+                            </p>
+                        </div>
+                    </a>
+                {% endfor %}
+                <a class="plus" href="#">Voir plus &nbsp; <i class="fas fa-angle-right"></i></a>
+            {% endif %}
         </div>
     </section>
 

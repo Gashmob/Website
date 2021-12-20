@@ -22,10 +22,6 @@ class Project
      */
     private $link;
     /**
-     * @var string Un lien (ou chemin) vers l'image du projet
-     */
-    private $image;
-    /**
      * @var Category[] Les catégories du projet
      */
     private $categories = [];
@@ -39,17 +35,15 @@ class Project
      * @param string $name
      * @param string $description
      * @param string $link
-     * @param string $image
      * @param Category[] $categories
      * @param Release[] $releases
      */
-    public function __construct(int $id, string $name, string $description, string $link, string $image, array $categories, array $releases)
+    public function __construct(int $id, string $name, string $description, string $link, array $categories, array $releases)
     {
         $this->id = $id;
         $this->name = $name;
         $this->description = $description;
         $this->link = $link;
-        $this->image = $image;
         $this->categories = $categories;
         $this->releases = $releases;
     }

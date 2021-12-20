@@ -20,7 +20,6 @@ abstract class ProjectManager
             $result['name'],
             $result['description'],
             $result['link'],
-            $result['image'],
             CategoryManager::getFromProjectId($id),
             ReleaseManager::getFromProjectId($id)
         );
@@ -42,10 +41,28 @@ abstract class ProjectManager
             $name,
             $result['description'],
             $result['link'],
-            $result['image'],
             CategoryManager::getFromProjectId($result['id']),
             ReleaseManager::getFromProjectId($result['id'])
         );
+    }
+
+    /**
+     * @param int $nb
+     * @return Project[]
+     */
+    public static function getNb(int $nb = 1): array
+    {
+        $pq = new PreparedQuery('SELECT id FROM Project LIMIT ?');
+        $pq->setInt($nb);
+
+        $results = $pq->getResult();
+
+        $res = [];
+        foreach ($results as $result) {
+            $res[] = self::getFromId($result['id']);
+        }
+
+        return $res;
     }
 
     /**
@@ -54,11 +71,10 @@ abstract class ProjectManager
      */
     public static function insert(Project $project): bool
     {
-        $pq = new PreparedQuery('INSERT INTO Project (name, description, link, image) VALUES (?, ?, ?, ?)');
+        $pq = new PreparedQuery('INSERT INTO Project (name, description, link) VALUES (?, ?, ?)');
         $pq->setString($project->getName());
         $pq->setString($project->getDescription());
         $pq->setString($project->getLink());
-        $pq->setString($project->getImage());
 
         $res = $pq->execute();
 

@@ -5,6 +5,7 @@ namespace Controller;
 use Fork\Annotations\Route;
 use Fork\Controller\AbstractController;
 use Fork\Response\Response;
+use ProjectManager;
 
 class HomeController extends AbstractController
 {
@@ -14,6 +15,10 @@ class HomeController extends AbstractController
      */
     public function homepage(): Response
     {
-        return $this->render('home/homepage.html.twig');
+        $projects = ProjectManager::getNb(3);
+
+        return $this->render('home/homepage.html.twig', [
+            'projects' => $projects
+        ]);
     }
 }

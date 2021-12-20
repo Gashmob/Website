@@ -71,7 +71,7 @@ abstract class CategoryManager
 
         $res = [];
         foreach ($results as $result) {
-            $res[] = new Category($result['name']);
+            $res[] = new Category($result['category']);
         }
 
         return $res;

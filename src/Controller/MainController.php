@@ -12,12 +12,26 @@ class MainController extends AbstractController
 
     /**
      * @Route(route="/", name="home")
+     * @return Response
      */
     public function homepage(): Response
     {
         $projects = ProjectManager::getNb(3);
 
         return $this->render('home/homepage.html.twig', [
+            'projects' => $projects
+        ]);
+    }
+
+    /**
+     * @Route(route="/projects", name="projects")
+     * @return Response
+     */
+    public function projects(): Response
+    {
+        $projects = ProjectManager::getAll();
+
+        return $this->render('home/projects.html.twig', [
             'projects' => $projects
         ]);
     }

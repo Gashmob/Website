@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projets{% endblock %}
+
+{% block body %}
+    <!--
+    {% for project in projects %}
+        <a href="{{ project.link }}" class="card" target="_blank">
+            <div class="card_gradiant"></div>
+            <div class="card_text">
+                <span class="card_text_title">{{ project.name }}</span>
+                <ul class="card_text_categories">
+                    {% for category in project.categories %}
+                        <li class="card_text_category">{{ category.name }}</li>
+                    {% endfor %}
+                </ul>
+                <p class="card_text_description">
+                    {{ project.description }}
+                </p>
+            </div>
+        </a>
+    {% endfor %}-->
+{% endblock %}

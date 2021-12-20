@@ -1,6 +1,7 @@
 <?php
 
 use Fork\Database\Query\PreparedQuery;
+use Fork\Database\Query\Query;
 
 abstract class ProjectManager
 {
@@ -56,6 +57,21 @@ abstract class ProjectManager
         $pq->setInt($nb);
 
         $results = $pq->getResult();
+
+        $res = [];
+        foreach ($results as $result) {
+            $res[] = self::getFromId($result['id']);
+        }
+
+        return $res;
+    }
+
+    /**
+     * @return Project[]
+     */
+    public static function getAll(): array
+    {
+        $results = (new Query('SELECT id FROM Project'))->getResult();
 
         $res = [];
         foreach ($results as $result) {

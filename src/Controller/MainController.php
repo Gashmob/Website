@@ -2,6 +2,7 @@
 
 namespace Controller;
 
+use CategoryManager;
 use Fork\Annotations\Route;
 use Fork\Controller\AbstractController;
 use Fork\Response\Response;
@@ -30,9 +31,11 @@ class MainController extends AbstractController
     public function projects(): Response
     {
         $projects = ProjectManager::getAll();
+        $categories = CategoryManager::getAllCategoriesWithNumbers();
 
         return $this->render('home/projects.html.twig', [
-            'projects' => $projects
+            'projects' => $projects,
+            'categories' => $categories,
         ]);
     }
 }

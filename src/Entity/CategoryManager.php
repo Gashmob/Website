@@ -48,11 +48,30 @@ abstract class CategoryManager
      */
     public static function getAllCategories(): array
     {
-        $results = new Query('SELECT * FROM Category');
+        $results = (new Query('SELECT * FROM Category'))->getResult();
 
         $res = [];
         foreach ($results as $result) {
             $res[] = new Category($result['name']);
+        }
+
+        return $res;
+    }
+
+    /**
+     * @return array
+     */
+    public static function getAllCategoriesWithNumbers(): array
+    {
+        $results = (new Query('SELECT * FROM Category'))->getResult();
+
+        $res = [];
+        foreach ($results as $result) {
+            $name = $result['name'];
+            $pq = new PreparedQuery('SELECT count(*) as nb FROM Project_Category WHERE category = ?');
+            $pq->setString($name);
+
+            $res[$name] = ($pq->getOneOrNullResult())['nb'];
         }
 
         return $res;

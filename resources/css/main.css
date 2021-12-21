@@ -199,4 +199,64 @@
   margin-left: 1em;
 }
 
+.projects {
+  height: 100vh;
+  display: flex;
+  justify-content: start;
+}
+.projects_categories {
+  width: 300px;
+  background-color: #D3E0EF;
+}
+.projects_categories h1 {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.projects_categories ul {
+  list-style: none;
+}
+.projects_categories ul li {
+  margin: 20px;
+  transition: color 200ms ease;
+}
+.projects_categories ul li span {
+  margin-left: 10px;
+  background-color: #D1D3D4;
+  padding: 5px;
+  border-radius: 10px;
+  color: black;
+}
+.projects_categories ul li:hover {
+  cursor: pointer;
+  color: #A7A9AC;
+}
+.projects_container {
+  height: 100vh;
+  width: 100%;
+}
+.projects_container_search {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.projects_container_search input {
+  width: 800px;
+  font-size: 24px;
+}
+.projects_container_search input:focus {
+  outline: none;
+}
+.projects_container_list {
+  height: 90vh;
+  overflow: scroll;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: start;
+}
+
 /*# sourceMappingURL=main.css.map */

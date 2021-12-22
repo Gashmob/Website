@@ -38,4 +38,13 @@ class MainController extends AbstractController
             'categories' => $categories,
         ]);
     }
+
+    /**
+     * @Route(route="/cv", name="cv")
+     * @return Response
+     */
+    public function cv(): Response
+    {
+        return $this->render('home/cv.html.twig');
+    }
 }

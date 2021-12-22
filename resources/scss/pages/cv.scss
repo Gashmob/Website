@@ -1,0 +1,138 @@
+@import "../utils/variables";
+
+.cv {
+  width: 60%;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  box-shadow: 5px 5px 10px grey;
+  margin: 50px 0;
+
+  &_head {
+    display: flex;
+    justify-content: start;
+
+    &_contact {
+      width: 30%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: $blue_grey;
+
+      h1 {
+        padding: 60px 20px 20px;
+      }
+
+      &_list {
+        padding: 30px 20px 50px;
+
+        a {
+          color: black;
+          font-size: 18px;
+          margin: 15px;
+        }
+      }
+    }
+
+    &_text {
+      width: 70%;
+      display: flex;
+      align-items: center;
+
+      p {
+        font-size: 20px;
+        text-indent: 2em;
+        padding: 20px;
+        text-align: justify;
+      }
+    }
+  }
+
+  &_body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px 0 20px;
+
+    &_section {
+      width: 90%;
+
+      h3 {
+        font-size: 28px;
+        color: $blue;
+        border-bottom: 3px solid $blue;
+
+        i {
+          margin-right: 10px;
+          color: $black;
+        }
+      }
+
+      &_content {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        &.row {
+          flex-direction: row;
+          align-items: stretch;
+        }
+
+        &.column {
+          flex-direction: column;
+        }
+      }
+    }
+
+    &_card {
+      width: 90%;
+      margin-top: 20px;
+      padding: 5px;
+      background-color: lighten($light-grey, 13%);
+      border-top-right-radius: 20px;
+
+      h4 {
+        font-size: 22px;
+      }
+
+
+      ul {
+        list-style: inside;
+
+        li {
+          margin-left: 1em;
+        }
+      }
+    }
+
+    &_separator {
+      width: 150px;
+      border: 2px solid $light-grey;
+      border-radius: 5px;
+      margin: 20px 0;
+    }
+  }
+
+  &_container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &_link {
+    margin-bottom: 20px;
+
+    a {
+      margin: 10px;
+      color: black;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

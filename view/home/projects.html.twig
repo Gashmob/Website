@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projets{% endblock %}
+
+{% block body %}
+    <div class="projects">
+        <div class="projects_categories">
+            <h1>Categories</h1>
+            <ul>
+                {% for category,nb in categories %}
+                    <li class="category" id="{{ category }}">{{ category }}<span>{{ nb }}</span></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="projects_container">
+            <div class="projects_container_search">
+                <input type="text" name="search" id="search"/>
+            </div>
+
+            <div class="projects_container_list">
+                {% for project in projects %}
+                    <a href="{{ project.link }}" class="card" target="_blank" id="{{ project.name }}">
+                        <div class="card_gradiant"></div>
+                        <div class="card_text">
+                            <span class="card_text_title">{{ project.name }}</span>
+                            <ul class="card_text_categories">
+                                {% for category in project.categories %}
+                                    <li class="card_text_category">{{ category.name }}</li>
+                                {% endfor %}
+                            </ul>
+                            <p class="card_text_description">
+                                {{ project.description }}
+                            </p>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}<script src="{{ asset('js/projects.js') }}"></script>{% endblock %}

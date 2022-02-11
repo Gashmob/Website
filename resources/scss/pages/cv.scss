@@ -1,146 +1,138 @@
-article {
-  margin: 2%;
-  padding: 2%;
-  width: 45%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  box-shadow: 1px 1px 12px #555;
-}
+@import "../utils/variables";
 
 .cv {
-  &_container {
+  width: 60%;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  box-shadow: 5px 5px 10px grey;
+  margin: 50px 0;
+
+  &_head {
     display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
+    justify-content: start;
 
-  &_header {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 3%;
+    &_contact {
+      width: 30%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: $blue_grey;
 
-    &_img {
-      width: 25%;
+      h1 {
+        padding: 60px 20px 20px;
+      }
 
-      img {
-        width: 100%;
+      &_list {
+        padding: 30px 20px 50px;
+
+        a {
+          color: black;
+          font-size: 18px;
+          margin: 15px;
+        }
       }
     }
 
     &_text {
+      width: 70%;
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      align-items: center;
 
-      > hr {
-        padding: 0 5%;
-      }
-
-      &_main {
-        padding: 1%;
-        text-align: center;
-        font-size: 3em;
-      }
-
-      &_sub {
-        margin: 0 5%;
-        padding: 1% 1% 1% 3%;
-        display: flex;
-        flex-direction: row;
-
-        &_col {
-          &_1 {
-            width: 25%;
-            display: flex;
-            flex-direction: column;
-          }
-
-          &_2 {
-            width: 75%;
-            text-align: justify;
-          }
-        }
+      p {
+        font-size: 20px;
+        text-indent: 2em;
+        padding: 20px;
+        text-align: justify;
       }
     }
   }
 
   &_body {
-    margin: 2% 0;
     display: flex;
+    align-items: center;
     flex-direction: column;
+    margin: 40px 0 20px;
 
-    &_row {
-      display: flex;
-      justify-content: space-between;
-    }
+    &_section {
+      width: 90%;
 
-    &_header {
-      border-bottom: 3px solid $color-primary;
-      color: $color-primary;
-      font-size: 2em;
-      margin-bottom: 1%;
+      h3 {
+        font-size: 28px;
+        color: $blue;
+        border-bottom: 3px solid $blue;
 
-      i {
-        color: $color-secondary;
+        i {
+          margin-right: 10px;
+          color: $black;
+        }
       }
-    }
 
-    &_info {
-      text-align: justify;
+      &_content {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        &.row {
+          flex-direction: row;
+          align-items: stretch;
+        }
+
+        &.column {
+          flex-direction: column;
+        }
+      }
     }
 
     &_card {
-      margin: 1% 0;
-      padding: 1%;
-      background-color: #fafafa;
-      box-shadow: 5px 5px 1px #555;
-      display: flex;
-      flex-direction: column;
+      width: 90%;
+      margin-top: 20px;
+      padding: 5px;
+      background-color: lighten($light-grey, 13%);
+      border-top-right-radius: 20px;
 
-      &-3 {
-        width: 30%;
-        margin: 1% 0;
-        padding: 1%;
-        background-color: #fafafa;
-        box-shadow: 5px 5px 1px #555;
-        display: flex;
-        flex-direction: column;
+      h4 {
+        font-size: 22px;
+      }
+
+
+      ul {
+        list-style: inside;
+
+        li {
+          margin-left: 1em;
+        }
       }
     }
 
-    &_list {
-      margin: 1% 2em;
-      list-style-type: none;
+    &_separator {
+      width: 150px;
+      border: 2px solid $light-grey;
+      border-radius: 5px;
+      margin: 20px 0;
+    }
+  }
 
-      li::before {
-        content: "•";
-        color: $color-primary;
-        display: inline-block;
-        width: 1em;
-        margin-left: -1em;
+  &_container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &_link {
+    margin-bottom: 20px;
+
+    a {
+      margin: 10px;
+      color: black;
+
+      &:hover {
+        text-decoration: none;
       }
     }
-
-    &_date {
-      font-style: italic;
-    }
   }
-}
-
-.download {
-  padding-bottom: 5%;
-}
-
-.cv_a {
-  color: $color-secondary;
-
-  &:hover {
-    text-decoration: none;
-  }
-}
-
-hr {
-  margin: 0 5%;
-  border: 1px solid $color-primary;
 }

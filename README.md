@@ -1,1 +1,1 @@
-Site web perso réalisé avec le framework [Fork](https://github.com/Gashmob/Fork) avec les conseils de Durbo
+Site web perso réalisé avec le framework [Fork](https://github.com/Gashmob/Fork) et les conseils de Durbo

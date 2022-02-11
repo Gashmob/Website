@@ -5,15 +5,14 @@
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  font-family: 'Quicksand', sans-serif;
+  font-family: $font;
+
+  overflow-x: hidden;
 }
 
-@import "components/containers";
-@import "components/link";
+@import "components/card";
 
 @import "pages/homepage";
-@import "pages/cv";
 @import "pages/projects";
-@import "pages/project";
-
+@import "pages/cv";
 @import "layout/responsive";

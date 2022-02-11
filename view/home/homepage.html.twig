@@ -1,113 +1,87 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Accueil{% endblock %}
+
 {% block body %}
-    <div class="arrows">
-        <img class="up" src="{{ asset('img/assets/arrow_up.svg') }}" alt="">
-        <img class="down" src="{{ asset('img/assets/arrow_down.svg') }}" alt="">
-    </div>
+    <header class="home_header">
+        <a href="{{ route("home") }}">Accueil</a>
+        <a href="#proj">Projets</a>
+        <a href="{{ route("cv") }}">CV</a>
+        <a href="https://github.com/Gashmob" target="_blank">Github</a>
+        <a href="https://gitlab.com/Gashmob" target="_blank">Gitlab</a>
+        <a href="https://www.linkedin.com/in/kevin-traini" target="_blank">Linkedin</a>
+    </header>
 
-    <div class="viewport-container">
-        <div class="viewport">
-            <div class="frame" id="1">
-                <div class="ronds_container">
-                    <div class="ronds">
-                        <img class="s" src="{{ asset('img/assets/circle_S.svg') }}" alt=""/>
-                        <img class="m" src="{{ asset('img/assets/circle_M.svg') }}" alt=""/>
-                        <img class="l" src="{{ asset('img/assets/circle_L.svg') }}" alt=""/>
-                    </div>
-                </div>
-                <div class="title_container">
-                    <h1 class="title">Kevin Traini</h1>
-                </div>
-            </div>
-
-            <div class="frame" id="2">
-                <div class="text_container">
-                    <div class="row_container">
-                        <div class="row">
-                            <h2 style="text-align: center">Qui suis-je ?</h2>
-                        </div>
-                        <div class="row">
-                            <p style="text-indent: 2em">Étudiant en 2ème année à l'Ensimag dans la filière Ingénierie des Systèmes d'Information, je partage mon temps libre
-                                entre famille, lecture et
-                                programmation. Je réalise divers projets autant en web (sites, framework) qu'en logiciel
-                                (simulation, compilateur).</p>
-                        </div>
-                        <div class="row">
-                            <p style="text-indent: 2em">Mon CV est disponible <a class="link" href="{{ route('cv') }}">ici</a>,
-                                et retrouvez moi sur <a class="link" href="https://github.com/Gashmob"
-                                                        target="_blank"><i class="fab fa-github"
-                                                                           style="text-indent: 0"></i> Github</a> et <a
-                                        class="link" href="https://www.linkedin.com/in/kevin-traini/" target="_blank"><i
-                                            class="fab fa-linkedin" style="text-indent: 0"></i> Linkedin</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="frame" id="3">
-                <div class="text_container">
-                    <div class="row_container">
-                        <div class="row">
-                            <h2 style="text-align: center">Mes projets</h2>
-                        </div>
-                        <div class="row flex_container" id="projets">
-                            {% for project in projects %}
-                                <a class="card" href="{{ route('showProject', {'name': project.link}) }}">
-                                    <div class="card_header">
-                                        <img class="card_header_img"
-                                             src="{{ asset('img/projects/' ~ project.img) }}" alt=""/>
-                                        <span class="card_header_text">{{ project.name }}</span>
-                                    </div>
-                                    <div class="card_body">
-                                        <p>{{ project.description }}</p>
-                                    </div>
-                                </a>
-                            {% endfor %}
-                            <a class="link" href="{{ route('listProjects') }}">Voir plus &gt;</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="frame" id="4">
-                <div class="text-container">
-                    <div class="column_container footer">
-                        <div class="column-2">
-                            <p>Site créé par Kevin Traini avec le framework Fork</p>
-                            <ul>
-                                <li><a class="link" href="https://github.com/Gashmob/Website/blob/master/LICENSE.md"
-                                       target="_blank">Licence
-                                        MIT</a></li>
-                                <li><a class="link" href="https://github.com/Gashmob/Website" target="_blank">Code
-                                        source</a></li>
-                            </ul>
-                        </div>
-                        <div class="column-2">
-                            <p>Ressources utilisées</p>
-                            <ul>
-                                <li><a class="link" href="https://jquery.com/" target="_blank">JQuery</a></li>
-                                <li><a class="link" href="https://jqueryui.com/" target="_blank">JQuery UI</a></li>
-                                <li><a class="link" href="https://fontawesome.com/" target="_blank">Font awesome</a>
-                                </li>
-                                <li><a class="link" href="https://github.com/Gashmob/Fork" target="_blank">Fork</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="home_section accueil"> <!-- Accueil -->
+        <canvas id="myCanvas"></canvas>
+        <div>
+            <span>Kevin TRAINI</span>
+            <a href="#cit" class="down"><i class="fas fa-angle-down"></i></a>
         </div>
-    </div>
+    </section>
 
+    <section class="home_section citations" id="cit"> <!-- Citations -->
+        <span class="left"><i class="fas fa-quote-left"></i> Ils ne savaient pas que c'était impossible, donc ils l'ont fait
+            <i class="fas fa-quote-right"></i></span>
+        <span class="right"><i class="fas fa-quote-left"></i> Pourquoi réfléchir quand on peut penser ?
+            <i class="fas fa-quote-right"></i></span>
+    </section>
 
-    <div class="points_container">
-        <span class="point" id="1" title="Accueil">•</span>
-        <span class="point" id="2" title="Présentation">•</span>
-        <span class="point" id="3" title="Projets">•</span>
-        <span class="point" id="4" title="Crédits">•</span>
-    </div>
+    <section class="home_section presentation" id="pres"> <!-- Présentation -->
+        <span>Étudiant en 2ᵉ année à l'Ensimag dans la filière Ingénierie des Systèmes d'Information, je partage mon temps libre entre famille, lecture et programmation. Je réalise divers projets autant en web (sites, framework) qu'en logiciel (simulation, compilateur).</span>
+    </section>
+
+    <section class="home_section projets" id="proj"> <!-- Projets -->
+        <h1>Projets</h1>
+        <div class="cards">
+            {% if projects is empty %}
+                <p style="font-size: 32px">Aucun projet</p>
+            {% else %}
+                {% for project in projects %}
+                    <a href="{{ project.link }}" class="card" target="_blank">
+                        <div class="card_gradiant"></div>
+                        <div class="card_text">
+                            <span class="card_text_title">{{ project.name }}</span>
+                            <ul class="card_text_categories">
+                                {% for category in project.categories %}
+                                    <li class="card_text_category">{{ category.name }}</li>
+                                {% endfor %}
+                            </ul>
+                            <p class="card_text_description">
+                                {{ project.description }}
+                            </p>
+                        </div>
+                    </a>
+                {% endfor %}
+                <a class="plus" href="{{ route('projects') }}">Voir plus &nbsp; <i class="fas fa-angle-right"></i></a>
+            {% endif %}
+        </div>
+    </section>
+
+    <section class="home_section footer" id="foot"> <!-- Footer -->
+        <!-- Juste pour faire de la place -->
+    </section>
+
+    <footer class="home_footer">
+        <div class="footer_section">
+            <p>Site créé par Kevin Traini en
+                <a href="https://github.com/Gashmob/Website" target="_blank">open source</a>
+                sous licence <a href="https://github.com/Gashmob/Website/blob/master/LICENSE.md">GNU GPL 3.0</a></p>
+        </div>
+        <div class="footer_section">
+            <p>Ressources utilisées</p>
+            <ul>
+                <li><a class="link" href="https://jquery.com/" target="_blank">JQuery</a></li>
+                <li><a class="link" href="https://jqueryui.com/" target="_blank">JQuery UI</a></li>
+                <li><a class="link" href="https://fontawesome.com/" target="_blank">Font awesome</a></li>
+                <li><a class="link" href="https://gitlab.com/Asteomount/Fork" target="_blank">Fork</a></li>
+            </ul>
+        </div>
+        <div class="footer_section">
+            <p>Hébergé chez OVH Cloud</p>
+            <p>2 rue Kellermann 59100 Roubaix</p>
+        </div>
+    </footer>
 {% endblock %}
 
-{% block javascript %}
-<script type="text/javascript" src="{{ asset('js/home.js') }}"></script>
-{% endblock %}
+{% block javascript %}<script src="{{ asset('js/home.js') }}"></script>{% endblock %}

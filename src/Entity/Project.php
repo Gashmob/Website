@@ -1,76 +1,51 @@
 <?php
 
-namespace Entity;
-
-use Fork\Database\Query\PreparedQuery;
-
-
 /**
- * Class Project
- * represent the project in database
+ * Un projet
  */
 class Project
 {
     /**
-     * @var int
+     * @var integer Un identifiant unique
      */
     private $id;
     /**
-     * @var string
+     * @var string Le nom du projet
      */
     private $name;
     /**
-     * @var string
+     * @var string La description du projet
      */
     private $description;
     /**
-     * @var string
-     */
-    private $readme;
-    /**
-     * @var string
-     */
-    private $createdAt;
-    /**
-     * @var string
-     */
-    private $updatedAt;
-    /**
-     * @var string
+     * @var string Un lien vers le git/site du projet
      */
     private $link;
     /**
-     * @var string
+     * @var Category[] Les catégories du projet
      */
-    private $git;
+    private $categories = [];
     /**
-     * @var string
+     * @var Release[] Les versions du projet
      */
-    private $img;
+    private $releases = [];
 
     /**
-     * Project constructor.
+     * @param int $id
      * @param string $name
      * @param string $description
-     * @param string $readme
-     * @param string $createdAt
-     * @param string $updatedAt
      * @param string $link
-     * @param string $git
-     * @param string $img
-     * @param int|null $id
+     * @param Category[] $categories
+     * @param Release[] $releases
      */
-    public function __construct(string $name, string $description, string $readme, string $createdAt, string $updatedAt, string $link, string $git, string $img, int $id = null)
+    public function __construct(int $id, string $name, string $description, string $link, array $categories, array $releases)
     {
+        $this->id = $id;
         $this->name = $name;
         $this->description = $description;
-        $this->readme = $readme;
-        $this->createdAt = $createdAt;
-        $this->updatedAt = $updatedAt;
         $this->link = $link;
-        $this->git = $git;
-        $this->img = $img;
-        $this->id = $id;
+        $this->categories = $categories;
+        $this->releases = $releases;
     }
 
     /**
@@ -79,6 +54,14 @@ class Project
     public function getId(): int
     {
         return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id): void
+    {
+        $this->id = $id;
     }
 
     /**
@@ -91,13 +74,10 @@ class Project
 
     /**
      * @param string $name
-     * @return Project
      */
-    public function setName(string $name): Project
+    public function setName(string $name): void
     {
         $this->name = $name;
-
-        return $this;
     }
 
     /**
@@ -110,70 +90,10 @@ class Project
 
     /**
      * @param string $description
-     * @return Project
      */
-    public function setDescription(string $description): Project
+    public function setDescription(string $description): void
     {
         $this->description = $description;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getReadme(): string
-    {
-        return $this->readme;
-    }
-
-    /**
-     * @param string $readme
-     * @return Project
-     */
-    public function setReadme(string $readme): Project
-    {
-        $this->readme = $readme;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCreatedAt(): string
-    {
-        return $this->createdAt;
-    }
-
-    /**
-     * @param string $createdAt
-     * @return Project
-     */
-    public function setCreatedAt(string $createdAt): Project
-    {
-        $this->createdAt = $createdAt;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getUpdatedAt(): string
-    {
-        return $this->updatedAt;
-    }
-
-    /**
-     * @param string $updatedAt
-     * @return Project
-     */
-    public function setUpdatedAt(string $updatedAt): Project
-    {
-        $this->updatedAt = $updatedAt;
-
-        return $this;
     }
 
     /**
@@ -186,81 +106,57 @@ class Project
 
     /**
      * @param string $link
-     * @return Project
      */
-    public function setLink(string $link): Project
+    public function setLink(string $link): void
     {
         $this->link = $link;
-
-        return $this;
     }
 
     /**
      * @return string
      */
-    public function getGit(): string
+    public function getImage(): string
     {
-        return $this->git;
+        return $this->image;
     }
 
     /**
-     * @param string $git
-     * @return Project
+     * @param string $image
      */
-    public function setGit(string $git): Project
+    public function setImage(string $image): void
     {
-        $this->git = $git;
-
-        return $this;
+        $this->image = $image;
     }
 
     /**
-     * @return string
+     * @return Category[]
      */
-    public function getImg(): string
+    public function getCategories(): array
     {
-        return $this->img;
+        return $this->categories;
     }
 
     /**
-     * @param string $img
-     * @return Project
+     * @param Category[] $categories
      */
-    public function setImg(string $img): Project
+    public function setCategories(array $categories): void
     {
-        $this->img = $img;
-
-        return $this;
+        $this->categories = $categories;
     }
 
     /**
-     * Push data into database
+     * @return Release[]
      */
-    public function flush(): bool
+    public function getReleases(): array
     {
-        if ($this->id == null) {
-            return (new PreparedQuery('INSERT INTO project (name, description, readme, createdAt, updateAt, link, git, img) VALUES (?, ?, ?, ?, ?, ?, ?, ?)'))
-                ->setString($this->name)
-                ->setString($this->description)
-                ->setString($this->readme)
-                ->setString($this->createdAt)
-                ->setString($this->updatedAt)
-                ->setString($this->link)
-                ->setString($this->git)
-                ->setString($this->img)
-                ->execute();
-        } else {
-            return (new PreparedQuery('UPDATE project SET name=?, description=?, readme=?, createdAt=?, updateAt=?, link=?, git=?, img=? WHERE id=?'))
-                ->setString($this->name)
-                ->setString($this->description)
-                ->setString($this->readme)
-                ->setString($this->createdAt)
-                ->setString($this->updatedAt)
-                ->setString($this->link)
-                ->setString($this->git)
-                ->setString($this->img)
-                ->setInt($this->id)
-                ->execute();
-        }
+        return $this->releases;
+    }
+
+    /**
+     * @param Release[] $releases
+     */
+    public function setReleases(array $releases): void
+    {
+        $this->releases = $releases;
     }
 }

@@ -25,10 +25,6 @@ class Project
      * @var Category[] Les catégories du projet
      */
     private $categories = [];
-    /**
-     * @var Release[] Les versions du projet
-     */
-    private $releases = [];
 
     /**
      * @param int $id
@@ -36,16 +32,14 @@ class Project
      * @param string $description
      * @param string $link
      * @param Category[] $categories
-     * @param Release[] $releases
      */
-    public function __construct(int $id, string $name, string $description, string $link, array $categories, array $releases)
+    public function __construct(int $id, string $name, string $description, string $link, array $categories)
     {
         $this->id = $id;
         $this->name = $name;
         $this->description = $description;
         $this->link = $link;
         $this->categories = $categories;
-        $this->releases = $releases;
     }
 
     /**
@@ -142,21 +136,5 @@ class Project
     public function setCategories(array $categories): void
     {
         $this->categories = $categories;
-    }
-
-    /**
-     * @return Release[]
-     */
-    public function getReleases(): array
-    {
-        return $this->releases;
-    }
-
-    /**
-     * @param Release[] $releases
-     */
-    public function setReleases(array $releases): void
-    {
-        $this->releases = $releases;
     }
 }

@@ -21,8 +21,7 @@ abstract class ProjectManager
             $result['name'],
             $result['description'],
             $result['link'],
-            CategoryManager::getFromProjectId($id),
-            ReleaseManager::getFromProjectId($id)
+            CategoryManager::getFromProjectId($id)
         );
     }
 
@@ -42,8 +41,7 @@ abstract class ProjectManager
             $name,
             $result['description'],
             $result['link'],
-            CategoryManager::getFromProjectId($result['id']),
-            ReleaseManager::getFromProjectId($result['id'])
+            CategoryManager::getFromProjectId($result['id'])
         );
     }
 
@@ -98,9 +96,6 @@ abstract class ProjectManager
         foreach ($project->getCategories() as $category) {
             self::addCategory($np->getId(), $category);
         }
-        foreach ($project->getReleases() as $release) {
-            self::addRelease($np->getId(), $release);
-        }
 
         return $res;
     }
@@ -117,15 +112,5 @@ abstract class ProjectManager
         $pq->setString($category->getName());
 
         return $pq->execute();
-    }
-
-    /**
-     * @param int $id
-     * @param Release $release
-     * @return bool
-     */
-    public static function addRelease(int $id, Release $release): bool
-    {
-        return ReleaseManager::insert($release, $id);
     }
 }

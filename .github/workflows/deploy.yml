@@ -1,0 +1,27 @@
+on: push
+name: Deploy website
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
+          composer install
+
+      - name: Prepare config
+        run: |
+          mv config/config.prod.yml config/config.yml
+
+      - name: Export files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ftpcloud.cluster024.hosting.ovh.net
+          protocol: ftp
+          port: 21
+          username: ${{ secrets.ftp_user }}
+          password: ${{ secrets.ftp_password }}
+          server-dir: Website/
+          security: loose

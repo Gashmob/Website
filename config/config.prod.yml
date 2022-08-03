@@ -1,0 +1,8 @@
+database:
+  credentials:
+    host: "jtmlpmmwebsite.mysql.db"
+    user: "jtmlpmmwebsite"
+    password: "ma01Chaine"
+    dbName: "jtmlpmmwebsite"
+    port: 3306
+mod: "prod"

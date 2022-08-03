@@ -11,6 +11,10 @@ jobs:
         run: |
           composer install
 
+      - name: Prepare config
+        run: |
+          mv config/config.prod.yml config/config.yml
+
       - name: Export files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:

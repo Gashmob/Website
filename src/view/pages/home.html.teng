@@ -1,0 +1,6 @@
+{@ base.html.teng }}
+
+{% body }}
+<h1>Marmotte Framework</h1>
+<h3>v1.0.0</h3>
+{{ body %}

@@ -36,12 +36,16 @@ final class MainController extends AbstractController
     #[Route('/')]
     public function home(): ResponseInterface
     {
-        return $this->render('home.html.teng', []);
+        return $this->render('pages/home.html.teng', [
+            'title' => 'Accueil'
+        ]);
     }
 
     #[Route('/cv')]
     public function cv(): ResponseInterface
     {
-        return $this->render('cv.html.teng', []);
+        return $this->render('pages/cv.html.teng', [
+            'title' => 'CV'
+        ]);
     }
 }

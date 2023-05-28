@@ -1,0 +1,5 @@
+{@ base.html.teng }}
+
+{% body }}
+<h1>CV</h1>
+{{ body %}

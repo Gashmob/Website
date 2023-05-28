@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <title>Marmotte</title>
+    {> head.html.teng }}
+
     <link rel="stylesheet" href="{| asset(css/index.css) }}">
 </head>
 <body>
-<h1>Marmotte Framework</h1>
-<h3>v1.0.0</h3>
+{% body }}{{ body %}
 </body>
 </html>

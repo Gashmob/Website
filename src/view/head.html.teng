@@ -1,0 +1,9 @@
+<title>Kevin Traini | {{ title }}</title>
+
+<meta name="author" content="Kevin Traini"/>
+<meta charset="UTF-8"/>
+<meta http-equiv="Content-Language" content="fr"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="keywords" content="Kevin Traini, Kevin, Traini, Informatique, Programmation, CV"/>
+
+<link rel="shortcut icon" href="{| asset(image/icon.png) }}">

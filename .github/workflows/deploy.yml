@@ -1,0 +1,35 @@
+name: Deploy website
+
+on:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Export files
+        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+        with:
+          host: ${{ secrets.HOST }}
+          user: ${{ secrets.USERNAME }}
+          pass: ${{ secrets.PASSWORD }}
+          first_ssh: |
+            cd ~/links
+            ./edit_links Website Maintenance
+            rm -rf ~/www/Website/*
+          scp: |
+            './config' => '~/www/Website/'
+            './public' => '~/www/Website/'
+            './src' => '~/www/Website/'
+            './.htaccess' => '~/www/Website/'
+            './composer.json' => '~/www/Website/'
+            './composer.lock' => '~/www/Website/'
+          last_ssh: |
+            cd ~/www/Website
+            composer install
+            cd ~/links
+            ./edit_links Website Website

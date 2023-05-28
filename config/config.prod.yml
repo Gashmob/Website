@@ -1,8 +1,0 @@
-database:
-  credentials:
-    host: "localhost"
-    user: ""
-    password: ""
-    dbName: "website"
-    port: 3306
-mod: "prod"

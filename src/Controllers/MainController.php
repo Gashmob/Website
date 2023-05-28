@@ -38,4 +38,10 @@ final class MainController extends AbstractController
     {
         return $this->render('home.html.teng', []);
     }
+
+    #[Route('/cv')]
+    public function cv(): ResponseInterface
+    {
+        return $this->render('cv.html.teng', []);
+    }
 }

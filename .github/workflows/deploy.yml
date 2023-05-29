@@ -30,6 +30,6 @@ jobs:
             './composer.lock' => '~/www/Website/'
           last_ssh: |
             cd ~/www/Website
-            composer install
+            ./deploy.sh
             cd ~/links
             ./edit_links Website Website

@@ -1,0 +1,35 @@
+name: Deploy website for test
+
+on:
+  push:
+    branches:
+      - 'dev*'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Export files
+        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+        with:
+          host: ${{ secrets.HOST }}
+          user: ${{ secrets.USERNAME }}
+          pass: ${{ secrets.PASSWORD }}
+          first_ssh: |
+            cd ~/links
+            ./edit_links Test Maintenance
+            rm -rf ~/www/Test/*
+          scp: |
+            './config' => '~/www/Test/'
+            './public' => '~/www/Test/'
+            './src' => '~/www/Test/'
+            './.htaccess' => '~/www/Test/'
+            './composer.json' => '~/www/Test/'
+            './composer.lock' => '~/www/Test/'
+          last_ssh: |
+            cd ~/www/Test
+            ./deploy.sh
+            cd ~/links
+            ./edit_links Test Test

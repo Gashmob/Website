@@ -28,6 +28,7 @@ jobs:
             './.htaccess' => '~/www/Test/'
             './composer.json' => '~/www/Test/'
             './composer.lock' => '~/www/Test/'
+            './deploy.sh' => '~/www/Test/'
           last_ssh: |
             cd ~/www/Test
             ./deploy.sh

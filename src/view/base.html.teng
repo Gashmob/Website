@@ -15,5 +15,7 @@
 </head>
 <body>
 {% body }}{{ body %}
+
+{% javascript }}{{ javascript %}
 </body>
 </html>

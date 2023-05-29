@@ -1,6 +1,5 @@
 {@ base.html.teng }}
 
-{% body }}
-<h1>Marmotte Framework</h1>
-<h3>v1.0.0</h3>
-{{ body %}
+{% javascript }}
+<script type="text/javascript" src="{| asset(js/dist/menu.js) }}"></script>
+{{ javascript %}

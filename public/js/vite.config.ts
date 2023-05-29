@@ -5,9 +5,11 @@ export default defineConfig({
     build: {
         lib: {
             entry: [
-                resolve(__dirname, "src/main.ts"),
+                resolve(__dirname, "src/menu/menu.ts"),
             ],
-            name: 'website'
-        }
+            name: 'website',
+            formats: ['es']
+        },
+        target: 'modules',
     }
 });

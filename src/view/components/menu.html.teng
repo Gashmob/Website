@@ -1,0 +1,15 @@
+<div class="menu">
+    <div class="menu-toggle active">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <div class="menu-container">
+        <div class="menu-container-links">
+            {( menu.items: name -> link }}
+            <a href="{{ link }}">{{ name }}</a>
+            {{ menu.items )}
+        </div>
+        <div class="menu-container-actions">
+            <button type="button"><i class="fa-regular fa-sun"></i></button>
+        </div>
+    </div>
+</div>

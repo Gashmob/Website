@@ -2,7 +2,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc && vite build",
-    "watch": "tsc && vite build --watch"
+    "watch": "vite build --watch"
   },
   "devDependencies": {
     "typescript": "^5.0.2",

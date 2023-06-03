@@ -1,5 +1,12 @@
 {@ base.html.teng }}
 
+{% body }}
+{> components/menu.html.teng }}
+
+<div class="w-screen h-screen bg-gradient-to-br from-sky-500 to-indigo-500 dark:from-[#4B79A1] dark:to-[#283E51]">
+</div>
+{{ body %}
+
 {% javascript }}
 <script type="text/javascript" src="{| asset(js/dist/menu.js) }}"></script>
 {{ javascript %}

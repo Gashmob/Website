@@ -37,7 +37,15 @@ final class MainController extends AbstractController
     public function home(): ResponseInterface
     {
         return $this->render('pages/home.html.teng', [
-            'title' => 'Accueil'
+            'title' => 'Accueil',
+            'menu'  => [
+                'items' => [
+                    'Accueil'  => '/',
+                    'CV'       => '/cv',
+                    'Github'   => 'https://github.com/Gashmob',
+                    'Linkedin' => 'https://www.linkedin.com/in/kevin-traini',
+                ],
+            ],
         ]);
     }
 
@@ -45,7 +53,7 @@ final class MainController extends AbstractController
     public function cv(): ResponseInterface
     {
         return $this->render('pages/cv.html.teng', [
-            'title' => 'CV'
+            'title' => 'CV',
         ]);
     }
 }

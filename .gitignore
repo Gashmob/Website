@@ -1,2 +1,5 @@
 .idea
-/vendor
+.vscode
+vendor
+logs
+cache

@@ -15,10 +15,6 @@ jobs:
         run: |
           composer install
 
-      - name: Prepare config
-        run: |
-          mv config/config.prod.yml config/config.yml
-
       - name: Exports files
         uses: appleboy/scp-action@v0.1.4
         with:

@@ -1,0 +1,2 @@
+error_handling:
+  404: \Gashmob\Website\Error\Error404

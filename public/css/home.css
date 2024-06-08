@@ -13,7 +13,7 @@ body {
     height: 100%;
     background: linear-gradient(160deg, rgba(0, 32, 95, 1) 0%, rgba(159, 81, 17, 0.67) 100%);
     display: grid;
-    grid-template-rows: 1fr 6fr 1fr;
+    grid-template-rows: 1fr 6fr 2fr;
     grid-template-columns: 1fr;
     align-items: start;
     align-content: stretch;
@@ -60,6 +60,11 @@ body {
     font-size: 96px;
     font-style: normal;
     font-weight: 400;
+}
+
+.logo_div > img {
+    width: 400px;
+    height: 400px;
 }
 
 .menu_div {

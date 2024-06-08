@@ -27,23 +27,48 @@ declare(strict_types=1);
 
 namespace Gashmob\Website\Services;
 
-use Archict\Brick\Service;
-use Twig\Environment;
-use Twig\Loader\FilesystemLoader;
+use LogicException;
+use Twig\Extension\ExtensionInterface;
+use Twig\TwigFunction;
 
-#[Service]
-final readonly class Twig
+final class TwigExtension implements ExtensionInterface
 {
-    private Environment $twig;
-
-    public function __construct()
+    public function getTokenParsers(): array
     {
-        $this->twig = new Environment(new FilesystemLoader(__DIR__ . '/../../templates/'));
-        $this->twig->addExtension(new TwigExtension());
+        return [];
     }
 
-    public function render(string $template_name, array $context = []): string
+    public function getNodeVisitors(): array
     {
-        return $this->twig->render($template_name, $context);
+        return [];
+    }
+
+    public function getFilters(): array
+    {
+        return [];
+    }
+
+    public function getTests(): array
+    {
+        return [];
+    }
+
+    public function getFunctions(): array
+    {
+        return [
+            new TwigFunction(
+                'asset',
+                fn(string $type, string $name) => match ($type) {
+                    'css'          => "css/$name.css",
+                    'img', 'image' => "img/$name",
+                    default        => throw new LogicException("Found asset type $type, but this is not handled"),
+                }
+            ),
+        ];
+    }
+
+    public function getOperators(): array
+    {
+        return [];
     }
 }

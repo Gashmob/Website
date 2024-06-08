@@ -32,15 +32,12 @@ use Archict\Brick\Service;
 use Archict\Router\Method;
 use Archict\Router\RouteCollectorEvent;
 use Gashmob\Website\Controller\HomeController;
-use Gashmob\Website\Controller\StatusController;
-use Gashmob\Website\Services\StatusService;
 use Gashmob\Website\Services\Twig;
 
 #[Service]
 final readonly class Application
 {
     public function __construct(
-        private StatusService $status_service,
         private Twig $twig,
     ) {
     }
@@ -49,6 +46,8 @@ final readonly class Application
     public function collectRoutes(RouteCollectorEvent $collector): void
     {
         $collector->addRoute(Method::GET, '', new HomeController($this->twig));
-        $collector->addRoute('GET', '/status', new StatusController($this->status_service));
+        $collector->addRoute(Method::GET, '/cv', static fn() => 'CV');
+        $collector->addRoute(Method::GET, '/projects', static fn() => 'Projects');
+        $collector->addRoute(Method::GET, '/expert', static fn() => 'Expert mode');
     }
 }

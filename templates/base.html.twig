@@ -2,6 +2,19 @@
 <html lang="en">
 <head>
     <title>Kevin Traini - {% block title %}{% endblock %}</title>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Kevin Traini portfolio"/>
+    <meta name="keywords" content="Kevin Traini, Kevin, Traini, Informatique, Programmation, CV"/>
+    <meta name="author" content="Kevin Traini"/>
+    <meta name="application-name" content="Kevin Traini - Portfolio">
+    <meta name="generator" content="Archict with Twig">
+
+    <meta property="og:title" content="Kevin Traini">
+    <meta property="og:description" content="Kevin Traini portfolio">
+    <meta property="og:image" content="{{ asset('img', 'logo.png') }}">
+
     <link rel="shortcut icon" href="{{ asset('img', 'logo.png') }}"/>
     <link rel="stylesheet" href="{{ asset('css', 'main') }}"/>
     {% block head %}{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CV{% endblock %}
+
+{% block head %}
+    <script src="https://kit.fontawesome.com/fdc86ed409.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ asset('css', 'cv') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="introduction">
+        introduction
+    </div>
+
+    <div class="timeline">
+        timeline
+    </div>
+
+    <div class="links">
+        <div class="title">
+            Want to see more, here some links
+        </div>
+        <div class="columns">
+            <a href="https://github.com/Gashmob/" target="_blank"><i class="icon fa-brands fa-github"></i>GitHub</a>
+            <a href="https://www.linkedin.com/in/kevin-traini/" target="_blank">
+                <i class="icon fa-brands fa-linkedin"></i>Linkedin
+            </a>
+        </div>
+    </div>
+{% endblock %}

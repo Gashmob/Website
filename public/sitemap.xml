@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://ktraini.com</loc>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://ktraini.com/cv</loc>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://ktraini.com/projects</loc>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://ktraini.com/expert</loc>
+        <priority>0.1</priority>
+    </url>
+</urlset>

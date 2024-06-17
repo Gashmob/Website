@@ -25,30 +25,21 @@
 
 declare(strict_types=1);
 
-namespace Gashmob\Website;
+namespace Gashmob\Website\Controller;
 
-use Archict\Brick\ListeningEvent;
-use Archict\Brick\Service;
-use Archict\Router\Method;
-use Archict\Router\RouteCollectorEvent;
-use Gashmob\Website\Controller\ExpertModeController;
-use Gashmob\Website\Controller\HomeController;
+use Archict\Router\RequestHandler;
 use Gashmob\Website\Services\Twig;
+use Psr\Http\Message\ServerRequestInterface;
 
-#[Service]
-final readonly class Application
+final readonly class ExpertModeController implements RequestHandler
 {
     public function __construct(
         private Twig $twig,
     ) {
     }
 
-    #[ListeningEvent]
-    public function collectRoutes(RouteCollectorEvent $collector): void
+    public function handle(ServerRequestInterface $request): string
     {
-        $collector->addRoute(Method::GET, '', new HomeController($this->twig));
-        $collector->addRoute(Method::GET, '/cv', static fn() => 'CV');
-        $collector->addRoute(Method::GET, '/projects', static fn() => 'Projects');
-        $collector->addRoute(Method::GET, '/expert', new ExpertModeController($this->twig));
+        return $this->twig->render('expert.html.twig');
     }
 }

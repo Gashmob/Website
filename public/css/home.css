@@ -86,3 +86,26 @@ body {
     text-decoration: none;
     font-size: 36px;
 }
+
+@media screen and (max-width: 700px) {
+    .expert_div {
+        display: none;
+    }
+
+    .expert_div > span {
+        font-size: 12px;
+    }
+
+    .logo_div > img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .logo_div > h1 {
+        font-size: 48px;
+    }
+
+    .menu_div a {
+        font-size: 24px;
+    }
+}

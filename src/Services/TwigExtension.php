@@ -59,8 +59,9 @@ final class TwigExtension implements ExtensionInterface
             new TwigFunction(
                 'asset',
                 fn(string $type, string $name) => match ($type) {
-                    'css'          => "css/$name.css",
-                    'img', 'image' => "img/$name",
+                    'css'          => "/css/$name.css",
+                    'img', 'image' => "/img/$name",
+                    'file'         => "/file/$name",
                     default        => throw new LogicException("Found asset type $type, but this is not handled"),
                 }
             ),

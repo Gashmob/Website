@@ -28,6 +28,24 @@ div.introduction > p {
     margin-bottom: 20px;
 }
 
+div.content h2 {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+div.content ul {
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+div.content li {
+    margin: 10px 0;
+}
+
+div.content span {
+    font-style: italic;
+}
+
 div.links {
     display: flex;
     flex-direction: column;
@@ -51,4 +69,20 @@ div.links > .columns > a {
 
 div.links > .columns > a > .icon {
     margin-right: 5px;
+}
+
+@media screen and (max-width: 700px) {
+    body > div {
+        width: 100%;
+    }
+}
+
+@media print {
+    body {
+        padding-top: 100px;
+    }
+
+    div.links {
+        display: none;
+    }
 }

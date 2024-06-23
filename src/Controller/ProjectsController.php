@@ -45,19 +45,34 @@ final readonly class ProjectsController implements RequestHandler
             [
                 'projects' => [
                     new Project(
-                        'Name',
+                        'Fil',
                         'https://github.com/Fil-Language',
                         'https://raw.githubusercontent.com/Fil-Language/Arts/master/Fil.svg',
-                        'some description',
-                        ['compiler', 'fil']
+                        'Fil is a programmation language with the goal to be easy to use and not to verbose.',
+                        ['language', 'compiler']
                     ),
                     new Project(
-                        'Name 2',
-                        'https://github.com/Fil-Language',
-                        'https://raw.githubusercontent.com/Fil-Language/Arts/master/Fil.svg',
-                        'some description 2',
-                        ['compiler', 'fil']
+                        'Enquirer',
+                        'https://github.com/Gashmob/Enquirer',
+                        'https://opengraph.githubassets.com/28273d2245f99078a03d96527827474032cdf4c1e011812592fc963f6c26c4c9/Gashmob/Enquirer',
+                        'A collection of function to make an interactive CLI. Inspired by Enquirer.js.',
+                        ['library', 'c++', 'terminal'],
                     ),
+                    new Project(
+                        'Archict',
+                        'https://github.com/Archict',
+                        'https://avatars.githubusercontent.com/u/165313332?s=200&v=4',
+                        'PHP framework to make api, websites and more. This website is made with it.',
+                        ['framework', 'php'],
+                    ),
+
+                    new Project(
+                        'See more',
+                        'https://github.com/Gashmob',
+                        'https://avatars.githubusercontent.com/u/54273056?v=4',
+                        'Want to see more? Go on my GitHub page.',
+                        [],
+                    )
                 ]
             ]
         );

@@ -32,7 +32,12 @@ body {
 }
 
 .card > img {
-    width: 300px;
+    max-width: 300px;
+    max-height: 300px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    overflow: hidden;
 }
 
 .card > .content {

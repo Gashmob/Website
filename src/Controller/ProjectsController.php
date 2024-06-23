@@ -25,32 +25,41 @@
 
 declare(strict_types=1);
 
-namespace Gashmob\Website;
+namespace Gashmob\Website\Controller;
 
-use Archict\Brick\ListeningEvent;
-use Archict\Brick\Service;
-use Archict\Router\Method;
-use Archict\Router\RouteCollectorEvent;
-use Gashmob\Website\Controller\CVController;
-use Gashmob\Website\Controller\ExpertModeController;
-use Gashmob\Website\Controller\HomeController;
-use Gashmob\Website\Controller\ProjectsController;
+use Archict\Router\RequestHandler;
+use Gashmob\Website\Data\Project;
 use Gashmob\Website\Services\Twig;
+use Psr\Http\Message\ServerRequestInterface;
 
-#[Service]
-final readonly class Application
+final readonly class ProjectsController implements RequestHandler
 {
-    public function __construct(
-        private Twig $twig,
-    ) {
+    public function __construct(private Twig $twig)
+    {
     }
 
-    #[ListeningEvent]
-    public function collectRoutes(RouteCollectorEvent $collector): void
+    public function handle(ServerRequestInterface $request): string
     {
-        $collector->addRoute(Method::GET, '', new HomeController($this->twig));
-        $collector->addRoute(Method::GET, '/cv', new CVController($this->twig));
-        $collector->addRoute(Method::GET, '/projects', new ProjectsController($this->twig));
-        $collector->addRoute(Method::GET, '/expert', new ExpertModeController($this->twig));
+        return $this->twig->render(
+            'projects.html.twig',
+            [
+                'projects' => [
+                    new Project(
+                        'Name',
+                        'https://github.com/Fil-Language',
+                        'https://raw.githubusercontent.com/Fil-Language/Arts/master/Fil.svg',
+                        'some description',
+                        ['compiler', 'fil']
+                    ),
+                    new Project(
+                        'Name 2',
+                        'https://github.com/Fil-Language',
+                        'https://raw.githubusercontent.com/Fil-Language/Arts/master/Fil.svg',
+                        'some description 2',
+                        ['compiler', 'fil']
+                    ),
+                ]
+            ]
+        );
     }
 }

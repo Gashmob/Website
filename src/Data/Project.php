@@ -25,32 +25,19 @@
 
 declare(strict_types=1);
 
-namespace Gashmob\Website;
+namespace Gashmob\Website\Data;
 
-use Archict\Brick\ListeningEvent;
-use Archict\Brick\Service;
-use Archict\Router\Method;
-use Archict\Router\RouteCollectorEvent;
-use Gashmob\Website\Controller\CVController;
-use Gashmob\Website\Controller\ExpertModeController;
-use Gashmob\Website\Controller\HomeController;
-use Gashmob\Website\Controller\ProjectsController;
-use Gashmob\Website\Services\Twig;
-
-#[Service]
-final readonly class Application
+final readonly class Project
 {
+    /**
+     * @param string[] $badges
+     */
     public function __construct(
-        private Twig $twig,
+        public string $name,
+        public string $url,
+        public string $image,
+        public string $description,
+        public array $badges,
     ) {
-    }
-
-    #[ListeningEvent]
-    public function collectRoutes(RouteCollectorEvent $collector): void
-    {
-        $collector->addRoute(Method::GET, '', new HomeController($this->twig));
-        $collector->addRoute(Method::GET, '/cv', new CVController($this->twig));
-        $collector->addRoute(Method::GET, '/projects', new ProjectsController($this->twig));
-        $collector->addRoute(Method::GET, '/expert', new ExpertModeController($this->twig));
     }
 }

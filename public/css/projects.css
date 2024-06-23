@@ -1,0 +1,86 @@
+body {
+    background-color: #b0bac3;
+    display: flex;
+    flex-direction: column;
+    padding: 200px 0;
+    align-items: center;
+    gap: 50px;
+}
+
+.card {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    gap: 50px;
+    width: 800px;
+    background-color: white;
+    border-radius: 20px;
+    height: 300px;
+    box-shadow: 5px 5px 5px grey;
+}
+
+.card:nth-child(odd) {
+    flex-direction: row;
+    justify-content: start;
+    text-align: start;
+}
+
+.card:nth-child(even) {
+    flex-direction: row-reverse;
+    justify-content: end;
+    text-align: end;
+}
+
+.card > img {
+    width: 300px;
+}
+
+.card > .content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    padding: 30px 0;
+}
+
+.card:nth-child(odd) > .content {
+    padding-right: 30px;
+}
+
+.card:nth-child(even) > .content {
+    padding-left: 30px;
+}
+
+.card > .content > h2 {
+    font-size: 36px;
+}
+
+.card > .content > p {
+    font-size: 18px;
+}
+
+.card > .content > .badges {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card:nth-child(odd) > .content > .badges {
+    justify-content: start;
+}
+
+.card:nth-child(even) > .content > .badges {
+    justify-content: end;
+}
+
+.card > .content > .badges > .badge {
+    background-color: #b1b1b1;
+    border-radius: 50px;
+    font-size: 12px;
+    padding: 2px 7px;
+}
+
+@media screen and (max-width: 800px) {
+    .card {
+        width: 100%;
+    }
+}

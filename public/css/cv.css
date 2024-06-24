@@ -93,7 +93,7 @@ div.links > .columns > a > .icon {
         display: block;
     }
 
-    body > * {
+    body * {
         display: none;
     }
 

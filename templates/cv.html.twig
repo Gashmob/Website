@@ -5,6 +5,19 @@
 {% block head %}
     <script src="https://kit.fontawesome.com/fdc86ed409.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset('css', 'cv') }}">
+    <script type="application/javascript">
+        window.addEventListener('keydown', function (event) {
+            if (event.keyCode === 80 && (event.ctrlKey || event.metaKey) && !event.altKey && (!event.shiftKey || window.chrome || window.opera)) {
+                event.preventDefault();
+                if (event.stopImmediatePropagation) {
+                    event.stopImmediatePropagation();
+                } else {
+                    event.stopPropagation();
+                }
+                window.open('{{ asset('file', 'Kevin_Traini-CV.pdf') }}')
+            }
+        }, true);
+    </script>
 {% endblock %}
 
 {% block body %}
@@ -67,7 +80,7 @@
             <a href="https://www.linkedin.com/in/kevin-traini/" target="_blank">
                 <i class="icon fa-brands fa-linkedin"></i>Linkedin
             </a>
-            <a href="{{ asset('file', 'Kevin Traini-CV.pdf') }}" target="_blank">
+            <a href="{{ asset('file', 'Kevin_Traini-CV.pdf') }}" target="_blank">
                 <i class="icon fa-regular fa-file-pdf"></i>PDF version
             </a>
         </div>

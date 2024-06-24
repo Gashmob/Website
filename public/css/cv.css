@@ -71,6 +71,10 @@ div.links > .columns > a > .icon {
     margin-right: 5px;
 }
 
+.print_view {
+    display: none;
+}
+
 @media screen and (max-width: 700px) {
     body > div {
         width: 100%;
@@ -79,5 +83,24 @@ div.links > .columns > a > .icon {
     body > div > * {
         margin-left: 20px;
         margin-right: 20px;
+    }
+}
+
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+        display: block;
+    }
+
+    body > * {
+        display: none;
+    }
+
+    .print_view {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        border: none;
     }
 }

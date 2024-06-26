@@ -70,7 +70,7 @@ final readonly class ProjectsController implements RequestHandler
                         'See more',
                         'https://github.com/Gashmob',
                         'https://avatars.githubusercontent.com/u/54273056?v=4',
-                        'Want to see more? Go on my GitHub page.',
+                        'Want to see more? Go on my GitHub profile.',
                         [],
                     )
                 ]

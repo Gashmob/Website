@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: white;
+    color: white;
+}
+
+.main_div {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(160deg, rgba(0, 32, 95, 1) 0%, rgba(159, 81, 17, 0.67) 100%);
+    display: grid;
+    grid-template-rows: 1fr 6fr 2fr;
+    grid-template-columns: 1fr;
+    align-items: start;
+    align-content: stretch;
+    justify-items: start;
+    justify-content: stretch;
+    padding: 0;
+}
+
+.expert_div {
+    display: flex;
+    gap: 5px;
+    margin: 0 50px 0 0;
+    align-self: center;
+    justify-self: end;
+    grid-column: 1;
+    grid-row: 1;
+    text-decoration: none;
+    color: white;
+}
+
+.expert_div > img {
+    width: 24px;
+    height: 24px;
+}
+
+.expert_div > span {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.logo_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    align-self: center;
+    justify-self: center;
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.logo_div > h1 {
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.logo_div > img {
+    width: 400px;
+    height: 400px;
+}
+
+.menu_div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: stretch;
+    justify-content: space-around;
+    align-self: center;
+    justify-self: center;
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.menu_div a {
+    color: white;
+    text-decoration: none;
+    font-size: 36px;
+}
+
+@media screen and (max-width: 700px) {
+    .expert_div {
+        display: none;
+    }
+
+    .expert_div > span {
+        font-size: 12px;
+    }
+
+    .logo_div > img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .logo_div > h1 {
+        font-size: 48px;
+    }
+
+    .menu_div a {
+        font-size: 24px;
+    }
+}

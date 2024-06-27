@@ -1,27 +1,17 @@
 {
-  "name": "gashmob/fork",
-  "description": "A little framework for basic websites and APIs",
-  "type": "project",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Kevin Traini",
-      "email": "kevin@ktraini.com"
+    "name": "gashmob/website",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Gashmob\\Website\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">= 8.2",
+        "archict/core": "^0.3",
+        "archict/router": "^0.3",
+        "guzzlehttp/psr7": "^2.6",
+        "twig/twig": "^3.10"
     }
-  ],
-  "autoload": {
-    "psr-4": {
-      "Fork\\": "fork/",
-      "Controller\\": "src/Controller"
-    }
-  },
-  "require": {
-    "doctrine/annotations": "^1.10",
-    "twig/twig": "^3.0",
-    "gashmob/yaml-editor": "^1.2",
-    "ext-json": "*",
-    "ext-mysqli": "*",
-    "twig/markdown-extra": "^3.3",
-    "erusev/parsedown": "^1.7"
-  }
 }

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Resource not found{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ asset('css', '404') }}" />
+{% endblock %}
+
+{% block body %}
+    <p>The ressource you are looking for doesn't exist</p>
+    <span>If you think it's an error, and it should exist, then please open an issue on this
+        <a href="https://github.com/Gashmob/Website/issues/new">website repository</a></span>
+{% endblock %}

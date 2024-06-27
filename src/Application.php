@@ -49,7 +49,7 @@ final readonly class Application
     public function collectRoutes(RouteCollectorEvent $collector): void
     {
         $collector->addRoute(Method::GET, '', new HomeController($this->twig));
-        $collector->addRoute(Method::GET, '/cv', new CVController($this->twig));
+//        $collector->addRoute(Method::GET, '/cv', new CVController($this->twig));
         $collector->addRoute(Method::GET, '/projects', new ProjectsController($this->twig));
         $collector->addRoute(Method::GET, '/expert', new ExpertModeController($this->twig));
     }

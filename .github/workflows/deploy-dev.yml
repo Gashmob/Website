@@ -18,6 +18,10 @@ jobs:
         run: |
           composer install
 
+      - name: Prod mod
+        run: |
+          mv .env.prod .env
+
       - name: Exports files
         uses: appleboy/scp-action@v0.1.7
         with:
@@ -26,3 +30,12 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           source: .
           target: ~/www/dev
+          rm: true
+
+      - name: SSH Remote Commands
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          script: chmod -R 777 ~/www/dev/cache

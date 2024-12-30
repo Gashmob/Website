@@ -40,17 +40,12 @@ use Gashmob\Website\Services\Twig;
 #[Service]
 final readonly class Application
 {
-    public function __construct(
-        private Twig $twig,
-    ) {
-    }
-
     #[ListeningEvent]
     public function collectRoutes(RouteCollectorEvent $collector): void
     {
-        $collector->addRoute(Method::GET, '', new HomeController($this->twig));
+        $collector->addRoute(Method::GET, '', HomeController::class);
 //        $collector->addRoute(Method::GET, '/cv', new CVController($this->twig));
-        $collector->addRoute(Method::GET, '/projects', new ProjectsController($this->twig));
-        $collector->addRoute(Method::GET, '/expert', new ExpertModeController($this->twig));
+        $collector->addRoute(Method::GET, '/projects', ProjectsController::class);
+        $collector->addRoute(Method::GET, '/expert', ExpertModeController::class);
     }
 }

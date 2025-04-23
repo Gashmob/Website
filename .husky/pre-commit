@@ -1,0 +1,6 @@
+pnpm run type-check
+
+pnpm run lint
+pnpm run format
+
+git update-index --again

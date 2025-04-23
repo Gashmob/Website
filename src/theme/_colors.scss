@@ -21,11 +21,21 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-import './theme/main.scss';
 
-import { createApp } from 'vue';
-import App from './App.vue';
+html {
+  --border-radius: 5px;
+}
 
-document.addEventListener('DOMContentLoaded', () => {
-  createApp(App).mount('#app');
-});
+html[data-theme='light'] {
+  --background-color: hsl(0, 0%, 100%);
+  --active-background-color: hsl(235, 100%, 97%);
+  --border-color: hsl(0, 0%, 85%);
+  --font-color: hsl(0, 0%, 10%);
+}
+
+html[data-theme='dark'] {
+  --background-color: hsl(235, 25%, 10%);
+  --active-background-color: hsl(235, 25%, 30%);
+  --border-color: hsl(0, 0%, 20%);
+  --font-color: hsl(235, 35%, 75%);
+}

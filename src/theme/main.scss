@@ -21,11 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-import './theme/main.scss';
+@use 'normalize.css/normalize.css';
+@use 'colors';
 
-import { createApp } from 'vue';
-import App from './App.vue';
-
-document.addEventListener('DOMContentLoaded', () => {
-  createApp(App).mount('#app');
-});
+body {
+  background-color: var(--background-color);
+  color: var(--font-color);
+}

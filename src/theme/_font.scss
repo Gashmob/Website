@@ -21,23 +21,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-html {
-  --border-radius: 5px;
-}
-
-html[data-theme='light'] {
-  --background-color: hsl(0, 0%, 100%);
-  --active-background-color: hsl(235, 100%, 97%);
-  --border-color: hsl(0, 0%, 85%);
-  --font-color: hsl(0, 0%, 10%);
-  --font-color-secondary: hsl(235, 50%, 40%);
-}
-
-html[data-theme='dark'] {
-  --background-color: hsl(235, 25%, 10%);
-  --active-background-color: hsl(235, 25%, 30%);
-  --border-color: hsl(0, 0%, 20%);
-  --font-color: hsl(235, 35%, 75%);
-  --font-color-secondary: hsl(235, 35%, 55%);
+:root {
+  --font-family: 'Open Sans', 'Arial', sans-serif;
 }

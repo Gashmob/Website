@@ -22,13 +22,59 @@
   - SOFTWARE.
   -->
 <template>
-  <header-bar />
-  <name-title />
+  <div class="columns">
+    <div class="title">
+      <h1>Kevin Traini</h1>
+      <h3>Software engineer.</h3>
+    </div>
+    <img class="image" src="../assets/logo.png" alt="" />
+  </div>
 </template>
 
-<script setup lang="ts">
-import HeaderBar from './components/HeaderBar.vue';
-import NameTitle from './components/NameTitle.vue';
-</script>
+<script setup lang="ts"></script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.columns {
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  > * {
+    height: 40%;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    * {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 4em;
+    }
+
+    h3 {
+      font-size: 1.5em;
+      color: var(--font-color-secondary);
+    }
+  }
+
+  .image {
+    --size: 250px;
+    width: var(--size);
+    height: var(--size);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .image {
+    display: none;
+  }
+}
+</style>

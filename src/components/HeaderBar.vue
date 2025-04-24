@@ -71,11 +71,14 @@ function handleSwitchThemeClick(): void {
 <style scoped lang="scss">
 .container-column {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
-  margin: 12px 0;
+  padding: 12px 0;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  backdrop-filter: blur(5px);
 }
 
 .header-icon {

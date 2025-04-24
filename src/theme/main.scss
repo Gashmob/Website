@@ -23,8 +23,10 @@
  */
 @use 'normalize.css/normalize.css';
 @use 'colors';
+@use 'font';
 
 body {
   background-color: var(--background-color);
   color: var(--font-color);
+  font-family: var(--font-family);
 }

@@ -27,13 +27,15 @@
       <img class="header-icon" src="../assets/logo.png" alt="Kevin" />
     </div>
     <div class="header-links">
-      <a href="https://www.linkedin.com/in/kevin-traini/" target="_blank">
+      <a href="https://www.linkedin.com/in/kevin-traini/" target="_blank" title="Linkedin">
         <i class="fa-brands fa-linkedin"></i>
       </a>
-      <a href="https://github.com/Gashmob" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://github.com/Gashmob" target="_blank" title="GitHub">
+        <i class="fa-brands fa-github"></i>
+      </a>
     </div>
     <div class="header-theme">
-      <button v-on:click="handleSwitchThemeClick">
+      <button v-on:click="handleSwitchThemeClick" title="Switch theme">
         <i ref="switch_theme_button_icon" class="fa-solid"></i>
       </button>
     </div>

@@ -28,6 +28,7 @@ html {
 
 html[data-theme='light'] {
   --background-color: hsl(0, 0%, 100%);
+  --background-color-secondary: hsl(0, 0%, 97%);
   --active-background-color: hsl(235, 100%, 97%);
   --border-color: hsl(0, 0%, 85%);
   --font-color: hsl(0, 0%, 10%);
@@ -36,6 +37,7 @@ html[data-theme='light'] {
 
 html[data-theme='dark'] {
   --background-color: hsl(235, 25%, 10%);
+  --background-color-secondary: hsl(235, 25%, 9.2%);
   --active-background-color: hsl(235, 25%, 30%);
   --border-color: hsl(0, 0%, 20%);
   --font-color: hsl(235, 35%, 75%);

@@ -22,16 +22,28 @@
   - SOFTWARE.
   -->
 <template>
-  <header-bar />
-  <name-title />
-
-  <footer-signature />
+  <div class="footer-container">
+    <p>Copyright 2025-Present Kevin Traini</p>
+    <img class="signature" src="../assets/signature.png" alt="" />
+  </div>
 </template>
 
-<script setup lang="ts">
-import HeaderBar from './components/HeaderBar.vue';
-import NameTitle from './components/NameTitle.vue';
-import FooterSignature from './components/FooterSignature.vue';
-</script>
+<script setup lang="ts"></script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.footer-container {
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background-color: var(--background-color-secondary);
+
+  .signature {
+    position: absolute;
+    height: 20px;
+    right: 0;
+    bottom: 0;
+  }
+}
+</style>

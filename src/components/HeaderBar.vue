@@ -27,7 +27,7 @@
       <img class="header-icon" src="../assets/logo.png" alt="Kevin" />
     </div>
     <div class="header-links">
-      <a href="https://www.linkedin.com/in/kevin-traini/" target="_blank" title="Linkedin">
+      <a href="https://www.linkedin.com/in/kevin-traini/" target="_blank" title="LinkedIn">
         <i class="fa-brands fa-linkedin"></i>
       </a>
       <a href="https://github.com/Gashmob" target="_blank" title="GitHub">
@@ -81,6 +81,7 @@ function handleSwitchThemeClick(): void {
   justify-content: space-evenly;
   align-items: center;
   backdrop-filter: blur(5px);
+  z-index: 100;
 }
 
 .header-icon {

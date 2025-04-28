@@ -22,59 +22,38 @@
   - SOFTWARE.
   -->
 <template>
-  <div class="columns">
-    <div class="title">
-      <h1>Kevin Traini</h1>
-      <h3>Software engineer.</h3>
+  <div class="container">
+    <h2 class="container-title" v-if="title !== ''">{{ title }}</h2>
+    <div class="container-content">
+      <slot></slot>
     </div>
-    <img class="image" src="../assets/logo.png" alt="" />
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineProps<{
+  title: string;
+}>();
+</script>
 
 <style scoped lang="scss">
-.columns {
-  display: flex;
-  gap: 100px;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
+.container {
+  box-sizing: border-box;
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 30px var(--shadow-color);
+  backdrop-filter: blur(5px) brightness(95%);
 
-  > * {
-    height: 40%;
+  > .container-title {
+    margin: 0 0 10px;
+    font-size: 1.1em;
   }
 
-  .title {
+  > .container-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-
-    * {
-      margin: 0;
-    }
-
-    h1 {
-      font-size: 4em;
-    }
-
-    h3 {
-      font-size: 1.5em;
-      color: var(--font-color-secondary);
-    }
-  }
-
-  .image {
-    --size: 250px;
-    width: var(--size);
-    height: var(--size);
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .image {
-    display: none;
+    gap: 25px;
   }
 }
 </style>

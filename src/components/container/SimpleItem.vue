@@ -22,59 +22,62 @@
   - SOFTWARE.
   -->
 <template>
-  <div class="columns">
-    <div class="title">
-      <h1>Kevin Traini</h1>
-      <h3>Software engineer.</h3>
+  <div class="item">
+    <div v-if="fa_icon" class="item-icon"><i v-bind:class="icon"></i></div>
+    <img v-else class="item-icon" v-bind:src="icon" alt="" />
+    <div class="item-content">
+      <h3>{{ title }}</h3>
+      <p>{{ description }}</p>
     </div>
-    <img class="image" src="../assets/logo.png" alt="" />
+    <span v-if="right_text !== ''" class="item-right-text">{{ right_text }}</span>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineProps<{
+  title: string;
+  description: string;
+  icon: string;
+  fa_icon: boolean;
+  right_text: string;
+}>();
+</script>
 
 <style scoped lang="scss">
-.columns {
+.item {
   display: flex;
-  gap: 100px;
-  justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
 
-  > * {
-    height: 40%;
+  > .item-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: var(--border-radius);
   }
 
-  .title {
+  > div.item-icon {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-
-    * {
-      margin: 0;
-    }
-
-    h1 {
-      font-size: 4em;
-    }
-
-    h3 {
-      font-size: 1.5em;
-      color: var(--font-color-secondary);
-    }
+    align-items: center;
+    border: 1px solid var(--border-color);
+    background-color: var(--background-color);
   }
 
-  .image {
-    --size: 250px;
-    width: var(--size);
-    height: var(--size);
+  .item-content > * {
+    margin: 0;
   }
-}
 
-@media screen and (max-width: 900px) {
-  .image {
-    display: none;
+  .item-content h3 {
+    font-weight: normal;
+  }
+
+  .item-content p {
+    font-size: 0.8em;
+  }
+
+  .item-right-text {
+    margin-left: auto;
+    font-size: 0.9em;
   }
 }
 </style>

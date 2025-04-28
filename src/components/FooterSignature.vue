@@ -42,7 +42,7 @@
   .signature {
     position: absolute;
     height: 20px;
-    right: 0;
+    right: 5px;
     bottom: 0;
   }
 }

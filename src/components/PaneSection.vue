@@ -22,59 +22,41 @@
   - SOFTWARE.
   -->
 <template>
-  <div class="columns">
-    <div class="title">
-      <h1>Kevin Traini</h1>
-      <h3>Software engineer.</h3>
-    </div>
-    <img class="image" src="../assets/logo.png" alt="" />
+  <div class="pane">
+    <h2 class="title">{{ title }}</h2>
+    <p class="description" v-if="description !== ''">{{ description }}</p>
+    <slot></slot>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineProps<{
+  title: string;
+  description: string;
+}>();
+</script>
 
 <style scoped lang="scss">
-.columns {
-  display: flex;
-  gap: 100px;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
+.pane {
+  width: 45%;
+  margin: 0 auto 150px;
 
-  > * {
-    height: 40%;
+  > .title {
+    font-size: 2.3em;
+    font-weight: normal;
   }
 
-  .title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    * {
-      margin: 0;
-    }
-
-    h1 {
-      font-size: 4em;
-    }
-
-    h3 {
-      font-size: 1.5em;
-      color: var(--font-color-secondary);
-    }
-  }
-
-  .image {
-    --size: 250px;
-    width: var(--size);
-    height: var(--size);
+  > .description {
+    color: var(--font-color-secondary);
+    font-size: 1.3em;
   }
 }
 
 @media screen and (max-width: 900px) {
-  .image {
-    display: none;
+  .pane {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
   }
 }
 </style>

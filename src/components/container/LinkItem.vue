@@ -22,59 +22,62 @@
   - SOFTWARE.
   -->
 <template>
-  <div class="columns">
-    <div class="title">
-      <h1>Kevin Traini</h1>
-      <h3>Software engineer.</h3>
+  <a class="item" v-bind:href="link" target="_blank">
+    <img class="item-icon" v-bind:src="icon" v-bind:alt="title" />
+    <div class="item-content">
+      <h3>{{ title }}</h3>
+      <p>{{ description }}</p>
     </div>
-    <img class="image" src="../assets/logo.png" alt="" />
-  </div>
+    <i class="fa-solid fa-arrow-up item-right-text"></i>
+  </a>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineProps<{
+  title: string;
+  description: string;
+  icon: string;
+  link: string;
+}>();
+</script>
 
 <style scoped lang="scss">
-.columns {
+.item {
   display: flex;
-  gap: 100px;
-  justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
+  color: inherit;
+  text-decoration: none;
 
-  > * {
-    height: 40%;
+  > .item-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: var(--border-radius);
   }
 
-  .title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    * {
-      margin: 0;
-    }
-
-    h1 {
-      font-size: 4em;
-    }
-
-    h3 {
-      font-size: 1.5em;
-      color: var(--font-color-secondary);
-    }
+  .item-content > * {
+    margin: 0;
   }
 
-  .image {
-    --size: 250px;
-    width: var(--size);
-    height: var(--size);
+  .item-content h3 {
+    font-weight: normal;
   }
-}
 
-@media screen and (max-width: 900px) {
-  .image {
-    display: none;
+  .item-content p {
+    font-size: 0.8em;
+  }
+
+  .item-right-text {
+    margin-left: auto;
+    margin-right: 10px;
+    transform: rotate(45deg);
+    font-size: 0.9em;
+    transition: 150ms ease-in-out;
+  }
+
+  &:hover .item-right-text {
+    filter: drop-shadow(-2px 2px 4px var(--shadow-color));
+    transform: translateX(3px) translateY(-3px) rotate(45deg);
   }
 }
 </style>

@@ -33,6 +33,7 @@ html[data-theme='light'] {
   --border-color: hsl(0, 0%, 85%);
   --font-color: hsl(0, 0%, 10%);
   --font-color-secondary: hsl(235, 50%, 40%);
+  --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
 html[data-theme='dark'] {
@@ -42,4 +43,5 @@ html[data-theme='dark'] {
   --border-color: hsl(0, 0%, 20%);
   --font-color: hsl(235, 35%, 75%);
   --font-color-secondary: hsl(235, 35%, 55%);
+  --shadow-color: rgba(30, 30, 30, 0.1);
 }

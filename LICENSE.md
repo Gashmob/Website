@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2024-Present Kevin Traini
+Copyright (c) 2025-Present Kevin Traini
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

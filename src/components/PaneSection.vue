@@ -56,6 +56,7 @@ defineProps<{
   .pane {
     width: 100%;
     padding: 20px;
+    margin-bottom: 50px;
     box-sizing: border-box;
   }
 }

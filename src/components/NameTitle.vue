@@ -73,6 +73,14 @@
 }
 
 @media screen and (max-width: 900px) {
+  .columns .title {
+    margin: 0 20px;
+
+    h1 {
+      font-size: 3.5em;
+    }
+  }
+
   .image {
     display: none;
   }

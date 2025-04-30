@@ -22,7 +22,7 @@
   - SOFTWARE.
   -->
 <template>
-  <a class="item" v-bind:href="link" target="_blank">
+  <a class="item" v-bind:href="link" target="_blank" v-on:click="handleClick">
     <img class="item-icon" v-bind:src="icon" v-bind:alt="title" />
     <div class="item-content">
       <h3>{{ title }}</h3>
@@ -39,6 +39,14 @@ defineProps<{
   icon: string;
   link: string;
 }>();
+
+const emit = defineEmits<{
+  (e: 'click', previous: MouseEvent): void;
+}>();
+
+function handleClick(event: MouseEvent): void {
+  emit('click', event);
+}
 </script>
 
 <style scoped lang="scss">

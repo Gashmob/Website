@@ -68,39 +68,66 @@
         </GlassContainer>
       </div>
       <GlassContainer title="Side projects">
-        <a class="item-link" href="https://github.com/Fil-Language" target="_blank"
-          ><SimpleItem
+        <a class="item-link" href="https://github.com/Fil-Language" target="_blank">
+          <SimpleItem
             title="Fil"
             description="A programming language"
             icon="fil_logo.png"
             :fa_icon="false"
             right_text=""
-        /></a>
-        <a class="item-link" href="https://github.com/Gashmob/YesChief" target="_blank"
-          ><SimpleItem
+          />
+        </a>
+        <a class="item-link" href="https://github.com/Gashmob/YesChief" target="_blank">
+          <SimpleItem
             title="YesChief!"
             description="Library to manage CLI options and commands"
             icon="fa-solid fa-globe"
             :fa_icon="true"
             right_text=""
-        /></a>
-        <a class="item-link" href="https://github.com/Archict" target="_blank"
-          ><SimpleItem
+          />
+        </a>
+        <a class="item-link" href="https://github.com/Archict" target="_blank">
+          <SimpleItem
             title="Archict"
             description="PHP framework"
             icon="fa-solid fa-terminal"
             :fa_icon="true"
             right_text=""
-        /></a>
-        <a class="item-link" href="https://github.com/Gashmob/Enquirer" target="_blank"
-          ><SimpleItem
+          />
+        </a>
+        <a class="item-link" href="https://github.com/Gashmob/Enquirer" target="_blank">
+          <SimpleItem
             title="Enquirer"
             description="Interactive CLI library"
             icon="fa-solid fa-terminal"
             :fa_icon="true"
             right_text=""
-        /></a>
+          />
+        </a>
       </GlassContainer>
+    </div>
+  </pane-section>
+  <pane-section title="Contact me" description="">
+    <div class="row">
+      <LinkItem
+        title="LinkedIn"
+        description="Feel free to contact me"
+        link="https://www.linkedin.com/in/kevin-traini/"
+        icon="linkedin_logo.png"
+      />
+      <LinkItem
+        title="Github"
+        description="Look at my work"
+        link="https://github.com/Gashmob"
+        icon="github_logo.png"
+      />
+      <LinkItem
+        title="Mail"
+        description="Send me mail"
+        link=""
+        icon="mail.png"
+        v-on:click="handleMailClick"
+      />
     </div>
   </pane-section>
 
@@ -115,6 +142,17 @@ import PaneSection from './components/PaneSection.vue';
 import GlassContainer from './components/container/GlassContainer.vue';
 import SimpleItem from './components/container/SimpleItem.vue';
 import LinkItem from './components/container/LinkItem.vue';
+
+function handleMailClick(event: MouseEvent): void {
+  event.preventDefault();
+  grecaptcha.ready(() => {
+    grecaptcha
+      .execute('6LcW_ikrAAAAAMaU8qr3OobnBCSKTOCBtCn9_u9Z', { action: 'submit' })
+      .then(() => {
+        window.open('mailto:kevin@ktraini.com', '_self')?.focus();
+      });
+  });
+}
 </script>
 
 <style scoped lang="scss">

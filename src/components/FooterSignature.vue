@@ -65,6 +65,7 @@
     height: 20px;
     right: 5px;
     bottom: 0;
+    pointer-events: none;
   }
 }
 </style>

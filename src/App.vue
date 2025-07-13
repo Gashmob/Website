@@ -33,28 +33,28 @@
             title="Enalean / Tuleap"
             description="Software engineer"
             icon="tuleap_logo.jpeg"
-            :fa_icon="false"
+            icon_type="image"
             right_text="2023 - Present"
           />
           <SimpleItem
             title="Enalean / Tuleap"
             description="Intern"
             icon="tuleap_logo.jpeg"
-            :fa_icon="false"
+            icon_type="image"
             right_text="2023"
           />
           <SimpleItem
             title="Lynred"
             description="Intern"
             icon="lynred_logo.jpeg"
-            :fa_icon="false"
+            icon_type="image"
             right_text="2022"
           />
           <SimpleItem
             title="LAMA"
             description="Intern"
             icon="fa-solid fa-flask-vial"
-            :fa_icon="true"
+            icon_type="fontawesome"
             right_text="2021"
           />
         </GlassContainer>
@@ -73,7 +73,16 @@
             title="Fil"
             description="A programming language"
             icon="fil_logo.png"
-            :fa_icon="false"
+            icon_type="image"
+            right_text=""
+          />
+        </a>
+        <a class="item-link" href="https://github.com/Gashmob/CrossedFingers" target="_blank">
+          <SimpleItem
+            title="Crossed Fingers"
+            description="C++ testing library"
+            icon="🤞"
+            icon_type="emoji"
             right_text=""
           />
         </a>
@@ -82,7 +91,7 @@
             title="YesChief!"
             description="Library to manage CLI options and commands"
             icon="fa-solid fa-globe"
-            :fa_icon="true"
+            icon_type="fontawesome"
             right_text=""
           />
         </a>
@@ -91,7 +100,7 @@
             title="Archict"
             description="PHP framework"
             icon="fa-solid fa-terminal"
-            :fa_icon="true"
+            icon_type="fontawesome"
             right_text=""
           />
         </a>
@@ -100,7 +109,7 @@
             title="Enquirer"
             description="Interactive CLI library"
             icon="fa-solid fa-terminal"
-            :fa_icon="true"
+            icon_type="fontawesome"
             right_text=""
           />
         </a>

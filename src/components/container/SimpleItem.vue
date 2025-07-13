@@ -23,8 +23,9 @@
   -->
 <template>
   <div class="item">
-    <div v-if="fa_icon" class="item-icon"><i v-bind:class="icon"></i></div>
-    <img v-else class="item-icon" v-bind:src="icon" alt="" />
+    <div v-if="icon_type === 'fontawesome'" class="item-icon"><i v-bind:class="icon"></i></div>
+    <div v-if="icon_type === 'emoji'" class="item-icon">{{ icon }}</div>
+    <img v-if="icon_type === 'image'" class="item-icon" v-bind:src="icon" alt="" />
     <div class="item-content">
       <h3>{{ title }}</h3>
       <p>{{ description }}</p>
@@ -38,7 +39,7 @@ defineProps<{
   title: string;
   description: string;
   icon: string;
-  fa_icon: boolean;
+  icon_type: 'fontawesome' | 'image' | 'emoji';
   right_text: string;
 }>();
 </script>

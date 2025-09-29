@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "normalize.css": "^8.0.1",
-    "vue": "^3.5.21"
+    "vue": "^3.5.22"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.2",

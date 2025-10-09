@@ -154,10 +154,15 @@ import LinkItem from './components/container/LinkItem.vue';
 
 function handleMailClick(event: MouseEvent): void {
   event.preventDefault();
-  grecaptcha.ready(() => {
-    grecaptcha
+  grecaptcha.enterprise.ready(() => {
+    grecaptcha.enterprise
       .execute('6LcW_ikrAAAAAMaU8qr3OobnBCSKTOCBtCn9_u9Z', { action: 'submit' })
-      .then(() => {
+      .then((token) =>
+        fetch(`https://api.ktraini.com/recaptcha?token=${encodeURIComponent(token)}`),
+      )
+      .then((response) => response.text())
+      .then((score) => {
+        console.log(`Got score ${score}`);
         window.open('mailto:kevin@ktraini.com', '_self')?.focus();
       });
   });

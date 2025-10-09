@@ -1,9 +1,10 @@
 /// <reference types="vite/client" />
 
 declare interface GReCaptcha {
-  ready(callback: () => void): void;
-
-  execute(token: string, options: object): Promise<void>;
+  enterprise: {
+    ready(callback: () => void): void;
+    execute(token: string, options: object): Promise<string>;
+  };
 }
 
 declare let grecaptcha: GReCaptcha;

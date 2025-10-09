@@ -90,7 +90,7 @@
           <SimpleItem
             title="YesChief!"
             description="Library to manage CLI options and commands"
-            icon="fa-solid fa-globe"
+            icon="fa-solid fa-terminal"
             icon_type="fontawesome"
             right_text=""
           />
@@ -99,7 +99,7 @@
           <SimpleItem
             title="Archict"
             description="PHP framework"
-            icon="fa-solid fa-terminal"
+            icon="fa-solid fa-globe"
             icon_type="fontawesome"
             right_text=""
           />

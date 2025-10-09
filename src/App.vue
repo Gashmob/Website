@@ -154,18 +154,8 @@ import LinkItem from './components/container/LinkItem.vue';
 
 function handleMailClick(event: MouseEvent): void {
   event.preventDefault();
-  grecaptcha.enterprise.ready(() => {
-    grecaptcha.enterprise
-      .execute('6LcW_ikrAAAAAMaU8qr3OobnBCSKTOCBtCn9_u9Z', { action: 'submit' })
-      .then((token) =>
-        fetch(`https://api.ktraini.com/recaptcha?token=${encodeURIComponent(token)}`),
-      )
-      .then((response) => response.text())
-      .then((score) => {
-        console.log(`Got score ${score}`);
-        window.open('mailto:kevin@ktraini.com', '_self')?.focus();
-      });
-  });
+  // Weak security ;D
+  setTimeout(() => window.open('mailto:kevin@ktraini.com', '_self')?.focus(), 3000);
 }
 </script>
 

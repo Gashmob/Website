@@ -90,7 +90,7 @@
           <SimpleItem
             title="YesChief!"
             description="Library to manage CLI options and commands"
-            icon="fa-solid fa-globe"
+            icon="fa-solid fa-terminal"
             icon_type="fontawesome"
             right_text=""
           />
@@ -99,7 +99,7 @@
           <SimpleItem
             title="Archict"
             description="PHP framework"
-            icon="fa-solid fa-terminal"
+            icon="fa-solid fa-globe"
             icon_type="fontawesome"
             right_text=""
           />
@@ -154,13 +154,8 @@ import LinkItem from './components/container/LinkItem.vue';
 
 function handleMailClick(event: MouseEvent): void {
   event.preventDefault();
-  grecaptcha.ready(() => {
-    grecaptcha
-      .execute('6LcW_ikrAAAAAMaU8qr3OobnBCSKTOCBtCn9_u9Z', { action: 'submit' })
-      .then(() => {
-        window.open('mailto:kevin@ktraini.com', '_self')?.focus();
-      });
-  });
+  // Weak security ;D
+  setTimeout(() => window.open('mailto:kevin@ktraini.com', '_self')?.focus(), 3000);
 }
 </script>
 

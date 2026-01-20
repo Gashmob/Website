@@ -33,6 +33,9 @@
       <a href="https://github.com/Gashmob" target="_blank" title="GitHub">
         <i class="fa-brands fa-github"></i>
       </a>
+      <a href="https://blog.ktraini.com" target="_blank" title="Blog">
+        <i class="fa-solid fa-newspaper"></i>
+      </a>
     </div>
     <div class="header-theme">
       <button v-on:click="handleSwitchThemeClick" title="Switch theme">

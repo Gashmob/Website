@@ -63,6 +63,7 @@
             title="LinkedIn"
             description="Want to see more?"
             icon="linkedin_logo.png"
+            icon_type="image"
             link="https://www.linkedin.com/in/kevin-traini/"
           />
         </GlassContainer>
@@ -123,18 +124,21 @@
         description="Feel free to contact me"
         link="https://www.linkedin.com/in/kevin-traini/"
         icon="linkedin_logo.png"
+        icon_type="image"
       />
       <LinkItem
         title="Github"
         description="Look at my work"
         link="https://github.com/Gashmob"
         icon="github_logo.png"
+        icon_type="image"
       />
       <LinkItem
         title="Mail"
         description="Send me mail"
         link=""
-        icon="mail.png"
+        icon="fa-regular fa-envelope"
+        icon_type="fontawesome"
         v-on:click="handleMailClick"
       />
     </div>

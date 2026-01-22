@@ -32,14 +32,14 @@
           <SimpleItem
             title="Enalean / Tuleap"
             description="Software engineer"
-            icon="tuleap_logo.jpeg"
+            icon="tuleap_logo.jpg"
             icon_type="image"
             right_text="2023 - Present"
           />
           <SimpleItem
             title="Enalean / Tuleap"
             description="Intern"
-            icon="tuleap_logo.jpeg"
+            icon="tuleap_logo.jpg"
             icon_type="image"
             right_text="2023"
           />

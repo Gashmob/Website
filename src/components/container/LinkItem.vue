@@ -23,7 +23,9 @@
   -->
 <template>
   <a class="item" v-bind:href="link" target="_blank" v-on:click="handleClick">
-    <img class="item-icon" v-bind:src="icon" v-bind:alt="title" />
+    <div v-if="icon_type === 'fontawesome'" class="item-icon"><i v-bind:class="icon"></i></div>
+    <div v-if="icon_type === 'emoji'" class="item-icon">{{ icon }}</div>
+    <img v-if="icon_type === 'image'" class="item-icon" v-bind:src="icon" v-bind:alt="title" />
     <div class="item-content">
       <h3>{{ title }}</h3>
       <p>{{ description }}</p>
@@ -37,6 +39,7 @@ defineProps<{
   title: string;
   description: string;
   icon: string;
+  icon_type: 'fontawesome' | 'image' | 'emoji';
   link: string;
 }>();
 
@@ -61,6 +64,13 @@ function handleClick(event: MouseEvent): void {
     height: 40px;
     margin-right: 10px;
     border-radius: var(--border-radius);
+  }
+
+  > div.item-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.75em;
   }
 
   .item-content > * {

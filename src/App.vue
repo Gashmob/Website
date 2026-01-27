@@ -135,7 +135,7 @@
       />
       <LinkItem
         title="Mail"
-        description="Send me mail"
+        description="Send me a mail"
         link=""
         icon="fa-regular fa-envelope"
         icon_type="fontawesome"

@@ -24,12 +24,7 @@
 <template>
   <div class="footer-container">
     <div class="footer-center">
-      <p>Copyright 2025-Present Kevin Traini</p>
-      <p class="google-text">
-        This site is protected by reCAPTCHA and the Google
-        <a href="https://policies.google.com/privacy">Privacy Policy</a> and
-        <a href="https://policies.google.com/terms">Terms of Service</a> apply.
-      </p>
+      <p>All Rights Reserved 2025-Present Kevin Traini</p>
     </div>
     <img class="signature" src="../assets/signature.png" alt="" />
   </div>
@@ -50,14 +45,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    .google-text {
-      font-size: 0.8rem;
-    }
-
-    a {
-      color: inherit;
-    }
   }
 
   .signature {

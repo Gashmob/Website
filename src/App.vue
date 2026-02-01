@@ -69,15 +69,15 @@
         </GlassContainer>
       </div>
       <GlassContainer title="Side projects">
-        <a class="item-link" href="https://github.com/Fil-Language" target="_blank">
-          <SimpleItem
-            title="Fil"
-            description="A programming language"
-            icon="fil_logo.png"
-            icon_type="image"
-            right_text=""
-          />
-        </a>
+<!--        <a class="item-link" href="https://github.com/Gashmob/fil" target="_blank">-->
+<!--          <SimpleItem-->
+<!--            title="Fil"-->
+<!--            description="A programming language"-->
+<!--            icon="fil_logo.png"-->
+<!--            icon_type="image"-->
+<!--            right_text=""-->
+<!--          />-->
+<!--        </a>-->
         <a class="item-link" href="https://github.com/Gashmob/CrossedFingers" target="_blank">
           <SimpleItem
             title="Crossed Fingers"

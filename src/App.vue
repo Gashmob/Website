@@ -78,6 +78,19 @@
         <!--            right_text=""-->
         <!--          />-->
         <!--        </a>-->
+        <a
+          class="item-link"
+          href="https://github.com/Gashmob/template-gettext-extractor"
+          target="_blank"
+        >
+          <SimpleItem
+            title="Template Gettext Extractor"
+            description="A tool to extract gettext strings from mustache templates"
+            icon="fa-solid fa-terminal"
+            icon_type="fontawesome"
+            right_text=""
+          />
+        </a>
         <a class="item-link" href="https://github.com/Gashmob/CrossedFingers" target="_blank">
           <SimpleItem
             title="Crossed Fingers"
